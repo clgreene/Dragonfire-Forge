@@ -10,6 +10,7 @@ public class BellowsGame : MonoBehaviour
     private GameObject currentGame;
     public int randomInt;
     public BoolData start;
+    public BoolData playing;
     public int arrow = 0;
     public int weaponMat;
 
@@ -22,18 +23,17 @@ public class BellowsGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (start == true)
+        if (start.value == true)
         {
-            randomInt = Random.Range(0, arrowGames.Length);
-            currentGame = Instantiate(arrowGames[randomInt]);
-            StartCoroutine(countDown());
-            weaponMat = 1;
-            arrow = 0;
+            playing.value = true;
+            start.value = false;
+            StartCoroutine(initializeGame());
+            StartCoroutine(startGame());
 
-            while (start == true)
-            {
-                currentGame.transform.position = new Vector2(0, -1 * Time.deltaTime);
-            }
+
+            
+
+            
 
             //pull arrow array/list
             //locate arrow based on arrow number in array - object location
@@ -45,6 +45,27 @@ public class BellowsGame : MonoBehaviour
 
         }
     }
+
+    public IEnumerator initializeGame()
+    {
+        yield return new WaitForSeconds(0f);
+        randomInt = Random.Range(0, arrowGames.Length);
+        currentGame = Instantiate(arrowGames[randomInt]);
+        StartCoroutine(countDown());
+        weaponMat = 1;
+        arrow = 0;
+
+    }
+
+    public IEnumerator startGame()
+    {
+        yield return new WaitForSeconds(0f);
+        while (playing.value == true)
+        {
+            currentGame.transform.position = new Vector2(0, -1 * Time.deltaTime);
+        }
+    }
+
 
     public IEnumerator countDown()
     {
