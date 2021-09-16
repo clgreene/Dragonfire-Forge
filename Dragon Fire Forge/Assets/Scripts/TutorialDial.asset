@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f077bbfe5b1500644b05207819774c45, type: 3}
+  m_Name: TutorialDial
+  m_EditorClassIdentifier: 
+  stringList:
+  - Who are you?
+  - My new apprentice eh? So the guild though sending another one was a good idea?
+  - What happened to the others you ask?
+  - Apparently, I'm not a "people person."
+  - Also, living on the edge of the dark lands isn't the safest place to be.
+  - Anyways, lets get you trained up a little so you know what we do here.
+  - The Dragonfire Forge is the last stop for heros and adventurers to get new or
+    repair weapons.
+  - It's important that we provide the best gear for our clients.
+  - We're a little low on our stock right now, but lets see what you can do.
+  - Grab some of that steel and toss it in the forge.
