@@ -2289,8 +2289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1706810e709d94ebf0bc5547c39014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowGames: []
-  randomInt: 0
+  arrowGames:
+  - {fileID: 1624746207458181289, guid: f6a6860da3be41548ad344aac6dda6b5, type: 3}
+  randomInt: 1
   start: {fileID: 11400000, guid: e51d4d5db2d8537499344881789b9171, type: 2}
   playing: {fileID: 11400000, guid: 8a3dca865be409e46b3f8a4ff8cefb6d, type: 2}
   arrow: 0

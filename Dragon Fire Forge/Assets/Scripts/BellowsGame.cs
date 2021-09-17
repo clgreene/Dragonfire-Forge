@@ -8,7 +8,7 @@ public class BellowsGame : MonoBehaviour
 
     public GameObject[] arrowGames;
     private GameObject currentGame;
-    public int randomInt;
+    public int randomInt = 1;
     public BoolData start;
     public BoolData playing;
     public int arrow = 0;
@@ -28,7 +28,7 @@ public class BellowsGame : MonoBehaviour
             playing.value = true;
             start.value = false;
             StartCoroutine(initializeGame());
-            StartCoroutine(startGame());
+            //StartCoroutine(startGame());
 
 
             
@@ -49,8 +49,8 @@ public class BellowsGame : MonoBehaviour
     public IEnumerator initializeGame()
     {
         yield return new WaitForSeconds(0f);
-        randomInt = Random.Range(0, arrowGames.Length);
-        currentGame = Instantiate(arrowGames[randomInt]);
+        randomInt = Random.Range(1, arrowGames.Length);
+        currentGame = Instantiate(arrowGames[randomInt - 1]);
         StartCoroutine(countDown());
         weaponMat = 1;
         arrow = 0;
