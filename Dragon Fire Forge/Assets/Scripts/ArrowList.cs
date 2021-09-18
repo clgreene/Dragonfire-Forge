@@ -13,18 +13,28 @@ public class ArrowList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        length = 0;
+
         
-        while (length < (arrowList.Length - 1))
-        {
-            arrowPositions.value[length] = arrowList[length].transform.position;
         
-        }
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (length == (arrowList.Length - 1))
+        {
+            arrowPositions.value.Clear();
+            length = 0;
+        }
+
+        while (length < (arrowList.Length - 1))
+        {
+            arrowPositions.value.Add(arrowList[length].transform.position);
+            length++;
+
+        }
     }
 }

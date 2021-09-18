@@ -7,7 +7,7 @@ using UnityEngine;
 public class ListData : ScriptableObject
 {
 
-    public Vector3[] value;
+    public List<Vector3> value;
 
     // Start is called before the first frame update
     void Start()
