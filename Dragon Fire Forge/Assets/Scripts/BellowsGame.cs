@@ -7,11 +7,12 @@ public class BellowsGame : MonoBehaviour
 {
 
     public GameObject[] arrowGames;
-    private GameObject currentGame;
+    public GameObject currentGame;
     public int randomInt = 1;
     public BoolData start;
     public BoolData playing;
     public int arrow = 0;
+    public Vector3 arrowPos;
     public int weaponMat;
 
     // Start is called before the first frame update
@@ -25,13 +26,7 @@ public class BellowsGame : MonoBehaviour
     {
         if (start.value == true)
         {
-            playing.value = true;
-            start.value = false;
             StartCoroutine(initializeGame());
-            //StartCoroutine(startGame());
-
-
-            
 
             
 
@@ -44,26 +39,24 @@ public class BellowsGame : MonoBehaviour
 
 
         }
+        if (playing.value == true)
+        {
+            currentGame.transform.Translate(0, -1 * Time.deltaTime, 0);
+            //arrowPos = new Vector3(currentGame.GetComponent<arrowList(arrow);
+        }
     }
 
     public IEnumerator initializeGame()
     {
+        start.value = false;
         yield return new WaitForSeconds(0f);
+        playing.value = true;
         randomInt = Random.Range(1, arrowGames.Length);
         currentGame = Instantiate(arrowGames[randomInt - 1]);
         StartCoroutine(countDown());
         weaponMat = 1;
         arrow = 0;
 
-    }
-
-    public IEnumerator startGame()
-    {
-        yield return new WaitForSeconds(0f);
-        while (playing.value == true)
-        {
-            currentGame.transform.position = new Vector2(0, -1 * Time.deltaTime);
-        }
     }
 
 

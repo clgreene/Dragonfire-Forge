@@ -800,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &349892985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1756,7 +1756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &808785379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2291,6 +2291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowGames:
   - {fileID: 1624746207458181289, guid: f6a6860da3be41548ad344aac6dda6b5, type: 3}
+  currentGame: {fileID: 0}
   randomInt: 1
   start: {fileID: 11400000, guid: e51d4d5db2d8537499344881789b9171, type: 2}
   playing: {fileID: 11400000, guid: 8a3dca865be409e46b3f8a4ff8cefb6d, type: 2}
@@ -3529,7 +3530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1682023286
 MonoBehaviour:
   m_ObjectHideFlags: 0
