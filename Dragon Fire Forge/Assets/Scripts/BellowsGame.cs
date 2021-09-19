@@ -9,16 +9,18 @@ public class BellowsGame : MonoBehaviour
     public GameObject[] arrowGames;
     public GameObject currentGame;
     public int randomInt = 1;
+    public bool foundNextArrow;
+    public int nextArrow;
     public BoolData start;
     public BoolData playing;
     public int arrow = 0;
-    public Vector3 arrowPos;
     public int weaponMat;
+    public ListData arrowPositions;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        nextArrow = 0;
     }
 
     // Update is called once per frame
@@ -30,25 +32,33 @@ public class BellowsGame : MonoBehaviour
 
             
 
-            //pull arrow array/list
-            //locate arrow based on arrow number in array - object location
+            
             //if mousebuttondown then access arrow position, play arrow animation based on position, and hide arrow until off screen (unless game object resets itself when reused, then just hide arrow)
             //if arrow position is past too far position, play missed animation at position, and hide arrow
             //increase arrow number by one
-            //if arrow number is larger than list, start is false.
+            //if arrow number is larger than list, playing is false.
 
 
         }
         if (playing.value == true)
         {
             currentGame.transform.Translate(0, -1 * Time.deltaTime, 0);
-            //arrowPos = new Vector3(currentGame.GetComponent<arrowList(arrow);
+            
         }
+
+        //reset the next arrow for the buttons when arrow has travelled to far
+        if (arrowPositions.value[nextArrow].y < -.6 && playing == true)
+        {
+            
+            nextArrow++;
+        }
+
     }
 
     public IEnumerator initializeGame()
     {
         start.value = false;
+        arrowPositions.value.Clear();
         yield return new WaitForSeconds(0f);
         playing.value = true;
         randomInt = Random.Range(1, arrowGames.Length);
@@ -67,6 +77,26 @@ public class BellowsGame : MonoBehaviour
         //play start animation
 
 
+
+    }
+
+    public IEnumerator rightButton()
+    {
+        yield return new WaitForSeconds(0f);
+        nextArrow++;
+
+
+        //checkArrowDirection
+        //CompareArrowPosition to Best Position
+        //run animation / hide arrow
+        //calculate score and add score
+        //move to next arrow
+
+    }
+
+    public IEnumerator leftButton()
+    {
+        yield return new WaitForSeconds(0f);
 
     }
 

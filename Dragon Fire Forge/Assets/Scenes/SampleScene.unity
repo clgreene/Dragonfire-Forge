@@ -2293,10 +2293,13 @@ MonoBehaviour:
   - {fileID: 1624746207458181289, guid: f6a6860da3be41548ad344aac6dda6b5, type: 3}
   currentGame: {fileID: 0}
   randomInt: 1
+  foundNextArrow: 0
+  nextArrow: 0
   start: {fileID: 11400000, guid: e51d4d5db2d8537499344881789b9171, type: 2}
   playing: {fileID: 11400000, guid: 8a3dca865be409e46b3f8a4ff8cefb6d, type: 2}
   arrow: 0
   weaponMat: 0
+  arrowPositions: {fileID: 11400000, guid: 180d665e573d09642ac41834edea7c9a, type: 2}
 --- !u!4 &1065249163
 Transform:
   m_ObjectHideFlags: 0
