@@ -35,14 +35,14 @@ public class ArrowList : MonoBehaviour
         }
 
         //tracking position for each item in array
-        while (length < (arrowList.Length - 1))
+        while (length < (arrowList.Length))
         {
             arrowPositions.value.Add(arrowList[length].transform.position);
             length++;
 
         }
 
-        if (arrowList[nextArrow].transform.position.y < -.6 && nextArrow <= (arrowList.Length - 1))
+        if (nextArrow <= (arrowList.Length - 1) && arrowList[nextArrow].transform.position.y < -.65)
         {
             arrowList[nextArrow].SetActive(false);
             nextArrow++;

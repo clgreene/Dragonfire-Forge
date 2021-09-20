@@ -47,10 +47,24 @@ public class BellowsGame : MonoBehaviour
         }
 
         //reset the next arrow for the buttons when arrow has travelled to far
-        if (arrowPositions.value[nextArrow].y < -.6 && playing == true)
+        if (playing.value == true)
         {
+            //ERROR HERE!!!! Reading these values while arrowPositions count is empty of values, then doesn't come back to it.
+            if (arrowPositions.value[nextArrow].y < -.65)
+            {
+                nextArrow++;
+                Debug.Log(nextArrow);
+
+                if (nextArrow > (arrowPositions.value.Count - 1))
+                {
+                    playing.value = false;
+                }
+
+            }
             
-            nextArrow++;
+            
+
+
         }
 
     }
