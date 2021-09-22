@@ -21,6 +21,9 @@ public class BellowsGame : MonoBehaviour
     void Start()
     {
         nextArrow = 0;
+        arrowPositions.listOver = false;
+        arrowPositions.listSet = false;
+        arrowPositions.number = 0;
     }
 
     // Update is called once per frame
@@ -40,46 +43,30 @@ public class BellowsGame : MonoBehaviour
 
 
         }
-        if (playing.value == true)
+        
+        if (arrowPositions.listOver == false && arrowPositions.listSet == true)
         {
             currentGame.transform.Translate(0, -1 * Time.deltaTime, 0);
             
         }
-
+        
         //reset the next arrow for the buttons when arrow has travelled to far
-        if (playing.value == true)
-        {
-            //ERROR HERE!!!! Reading these values while arrowPositions count is empty of values, then doesn't come back to it.
-            if (arrowPositions.value[nextArrow].y < -.65)
-            {
-                nextArrow++;
-                Debug.Log(nextArrow);
 
-                if (nextArrow > (arrowPositions.value.Count - 1))
-                {
-                    playing.value = false;
-                }
-
-            }
-            
-            
-
-
-        }
-
+        
+        
     }
 
     public IEnumerator initializeGame()
     {
         start.value = false;
         arrowPositions.value.Clear();
-        yield return new WaitForSeconds(0f);
-        playing.value = true;
         randomInt = Random.Range(1, arrowGames.Length);
         currentGame = Instantiate(arrowGames[randomInt - 1]);
+        playing.value = true;
         StartCoroutine(countDown());
         weaponMat = 1;
         arrow = 0;
+        yield return new WaitForSeconds(0f);
 
     }
 
@@ -97,7 +84,7 @@ public class BellowsGame : MonoBehaviour
     public IEnumerator rightButton()
     {
         yield return new WaitForSeconds(0f);
-        nextArrow++;
+        arrowPositions.number++;
 
 
         //checkArrowDirection
@@ -111,6 +98,7 @@ public class BellowsGame : MonoBehaviour
     public IEnumerator leftButton()
     {
         yield return new WaitForSeconds(0f);
+        arrowPositions.number++;
 
     }
 

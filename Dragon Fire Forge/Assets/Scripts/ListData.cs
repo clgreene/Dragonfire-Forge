@@ -8,11 +8,16 @@ public class ListData : ScriptableObject
 {
 
     public List<Vector3> value;
+    public bool listSet;
+    public bool listOver;
+    public int number;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        listSet = false;
+        number = 0;
+        listOver = false;
     }
 
     // Update is called once per frame

@@ -7,15 +7,18 @@ public class ArrowList : MonoBehaviour
 
     public GameObject[] arrowList;
     public ListData arrowPositions;
-    public int length;
+    
     public BellowsGame bellowsGame;
     public int nextArrow;
+    public bool initialize;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        length = 0;
+        arrowPositions.number = 0;
+        initialize = true;
+        nextArrow = 0;
 
         
         
@@ -28,24 +31,46 @@ public class ArrowList : MonoBehaviour
     {
 
         //resetting position tracker to first item in list
-        if (length == (arrowList.Length - 1))
-        {
-            arrowPositions.value.Clear();
-            length = 0;
-        }
+        
 
         //tracking position for each item in array
-        while (length < (arrowList.Length))
+        while (arrowPositions.number < (arrowList.Length - 1) && initialize == true)
         {
-            arrowPositions.value.Add(arrowList[length].transform.position);
-            length++;
+            arrowPositions.value.Add(arrowList[arrowPositions.number].transform.position);
+            arrowPositions.number++;
+
+            if (arrowPositions.number == (arrowList.Length - 1))
+            {
+
+                arrowPositions.listSet = true;
+                arrowPositions.number = 0;
+                initialize = false;
+            }
 
         }
 
-        if (nextArrow <= (arrowList.Length - 1) && arrowList[nextArrow].transform.position.y < -.65)
+        if (arrowPositions.listSet == true)
         {
-            arrowList[nextArrow].SetActive(false);
-            nextArrow++;
+            arrowPositions.value[arrowPositions.number] = arrowList[arrowPositions.number].transform.position;
+            arrowPositions.number++;
+
+            if (arrowPositions.number == (arrowList.Length - 1))
+            {
+                arrowPositions.number = 0;
+            }
+
+            if (nextArrow < (arrowList.Length) && arrowList[nextArrow].transform.position.y < -.65)
+            {
+                arrowList[nextArrow].SetActive(false);
+                nextArrow++;
+                if (nextArrow == arrowList.Length)
+                {
+                    arrowPositions.listOver = true;
+                    arrowPositions.listSet = false;
+                }
+            }
+
         }
+
     }
 }
