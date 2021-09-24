@@ -28,6 +28,9 @@ public class GameController : MonoBehaviour
     public GameObject CreditsScreen;
     public GameObject TutorialOption;
 
+
+    public BoolData startBellows;
+
     public void NewGame()
     {
         HomeScreen.SetActive(false);
@@ -39,6 +42,14 @@ public class GameController : MonoBehaviour
         TutorialOption.SetActive(false);
         //ForgeScreen.SetActive(true);
         Dialogue.SetActive(true);
+    }
+
+    public void startContract()
+    {
+        Dialogue.SetActive(false);
+        SmeltGame.SetActive(true);
+        startBellows.value = true;
+
     }
 
     public void noTutorial()

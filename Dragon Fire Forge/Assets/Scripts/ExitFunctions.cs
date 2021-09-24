@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class ExitFunctions : MonoBehaviour
 {
+
+
+
+
+
+
     //List of all events that happen when you exit dialogue
 
     public void startBellows()
