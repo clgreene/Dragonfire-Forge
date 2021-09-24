@@ -22,7 +22,6 @@ public class StringListOperator : MonoBehaviour
     //Logic for loading current dialogue list, called from the Dialogue Trigger Set Event
     public void SetDialogueList(Text obj)
     {
-        
 
         returnValue = currentList.value.stringList[i];
 
@@ -46,7 +45,6 @@ public class StringListOperator : MonoBehaviour
 
             obj.text = returnValue;
         }
-
 
     }
 

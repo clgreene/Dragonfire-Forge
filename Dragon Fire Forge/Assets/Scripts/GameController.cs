@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
 
 
     public BoolData startBellows;
+    public IntData weaponMat;
 
     public void NewGame()
     {
@@ -48,6 +49,7 @@ public class GameController : MonoBehaviour
     {
         Dialogue.SetActive(false);
         SmeltGame.SetActive(true);
+        weaponMat.value = 0;
         startBellows.value = true;
 
     }

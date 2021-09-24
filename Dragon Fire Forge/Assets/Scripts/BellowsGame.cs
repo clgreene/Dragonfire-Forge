@@ -6,6 +6,7 @@ using UnityEngine;
 public class BellowsGame : MonoBehaviour
 {
 
+
     public GameObject[] arrowGames;
     public GameObject currentGame;
     public int randomInt = 1;
@@ -14,16 +15,24 @@ public class BellowsGame : MonoBehaviour
     public BoolData start;
     public BoolData playing;
     public int arrow = 0;
-    public int weaponMat;
+    public IntData weaponMat;
     public ListData arrowPositions;
+
+    public CurrentContract currentContract;
 
     // Start is called before the first frame update
     void Start()
     {
+        //resetting arrow transforms at new game.
         nextArrow = 0;
         arrowPositions.listOver = false;
         arrowPositions.listSet = false;
         arrowPositions.number = 0;
+
+        //setting current contract expectations
+        
+
+
     }
 
     // Update is called once per frame
@@ -31,9 +40,10 @@ public class BellowsGame : MonoBehaviour
     {
         if (start.value == true)
         {
-            StartCoroutine(initializeGame());
-
-            
+            if (weaponMat.value != 0) // ! 
+            {
+                StartCoroutine(initializeGame());
+            }
 
             
             //if mousebuttondown then access arrow position, play arrow animation based on position, and hide arrow until off screen (unless game object resets itself when reused, then just hide arrow)
@@ -51,9 +61,7 @@ public class BellowsGame : MonoBehaviour
         }
         
         //reset the next arrow for the buttons when arrow has travelled to far
-
-        
-        
+ 
     }
 
     public IEnumerator initializeGame()
@@ -64,7 +72,6 @@ public class BellowsGame : MonoBehaviour
         currentGame = Instantiate(arrowGames[randomInt - 1]);
         playing.value = true;
         StartCoroutine(countDown());
-        weaponMat = 1;
         arrow = 0;
         yield return new WaitForSeconds(0f);
 
