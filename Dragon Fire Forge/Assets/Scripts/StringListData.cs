@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -11,8 +12,14 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class StringListData : ScriptableObject
 {
+    public UnityEvent exitEvent;
 
     public List<string> stringList;
+
+    public void exitFunction()
+    {
+        exitEvent.Invoke();
+    }
 
  
 }

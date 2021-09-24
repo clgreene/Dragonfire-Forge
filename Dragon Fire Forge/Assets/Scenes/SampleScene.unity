@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 42617257}
   - component: {fileID: 42617256}
   - component: {fileID: 42617255}
+  - component: {fileID: 42617258}
   m_Layer: 5
   m_Name: TutorialButton
   m_TagString: Untagged
@@ -376,7 +377,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1682023291}
+      - m_Target: {fileID: 42617258}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: startDialogue
         m_Mode: 1
@@ -426,6 +427,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42617253}
   m_CullTransparentMesh: 1
+--- !u!114 &42617258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42617253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d06c67e834c974aadbc9d700294e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerCycleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1682023292}
+        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
+        m_MethodName: GetNextDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22314932}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1682023292}
+        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
+        m_MethodName: ExitTextUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22314932}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerSetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1682023292}
+        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
+        m_MethodName: SetDialogueList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22314932}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  currentString: {fileID: 11400000, guid: 96f6278fe6a4e564a8d7cca872ff10b6, type: 2}
+  dialogue: {fileID: 11400000, guid: b51aebc8b0f45bf41a57d3b04d3fd05c, type: 2}
 --- !u!1 &123750401
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &349892985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1756,7 +1816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &808785379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2547,6 +2607,7 @@ GameObject:
   - component: {fileID: 1208434987}
   - component: {fileID: 1208434986}
   - component: {fileID: 1208434985}
+  - component: {fileID: 1208434988}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2619,7 +2680,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1682023291}
+      - m_Target: {fileID: 1208434988}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: cycleDialogue
         m_Mode: 1
@@ -2681,6 +2742,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208434983}
   m_CullTransparentMesh: 1
+--- !u!114 &1208434988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208434983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d06c67e834c974aadbc9d700294e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerCycleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1682023292}
+        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
+        m_MethodName: GetNextDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22314932}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1682023292}
+        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
+        m_MethodName: ExitTextUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22314932}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerSetEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  currentString: {fileID: 11400000, guid: 96f6278fe6a4e564a8d7cca872ff10b6, type: 2}
+  dialogue: {fileID: 11400000, guid: b51aebc8b0f45bf41a57d3b04d3fd05c, type: 2}
 --- !u!1 &1226021592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,7 +3632,6 @@ GameObject:
   - component: {fileID: 1682023287}
   - component: {fileID: 1682023286}
   - component: {fileID: 1682023290}
-  - component: {fileID: 1682023291}
   - component: {fileID: 1682023292}
   - component: {fileID: 1682023293}
   m_Layer: 5
@@ -3645,63 +3752,6 @@ MonoBehaviour:
   WeaponDisplay: {fileID: 0}
   CreditsScreen: {fileID: 0}
   TutorialOption: {fileID: 1914456012}
---- !u!114 &1682023291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682023285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d06c67e834c974aadbc9d700294e5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TriggerCycleEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1682023292}
-        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
-        m_MethodName: GetNextDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 22314932}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  TriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1682023292}
-        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
-        m_MethodName: ExitTextUI
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 22314932}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  TriggerSetEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1682023292}
-        m_TargetAssemblyTypeName: StringListOperator, Assembly-CSharp
-        m_MethodName: SetDialogueList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 22314932}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1682023292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3714,17 +3764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de2b42c23d297045addb5d73949d6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 2fc7e46057942234fb289ecc7e3f0597, type: 2}
-  currentList: {fileID: 11400000, guid: b51aebc8b0f45bf41a57d3b04d3fd05c, type: 2}
-  listOne: {fileID: 11400000, guid: b51aebc8b0f45bf41a57d3b04d3fd05c, type: 2}
-  listTwo: {fileID: 0}
-  listThree: {fileID: 0}
-  listFour: {fileID: 0}
-  listFive: {fileID: 0}
-  listSix: {fileID: 0}
-  listSeven: {fileID: 0}
-  listEight: {fileID: 0}
-  listNine: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: b182b2f755f510e4ba9a548a24de0177, type: 2}
+  currentList: {fileID: 11400000, guid: 96f6278fe6a4e564a8d7cca872ff10b6, type: 2}
   returnValue: 
   i: 0
 --- !u!114 &1682023293
