@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
 {
 
 	//establishing Unity Events for dialogue events
-	public UnityEvent TriggerCycleEvent, TriggerExitEvent, TriggerSetEvent, TriggerExitFunction;
+	public UnityEvent TriggerCycleEvent, TriggerExitEvent, TriggerSetEvent;
 
 	//compartmentalizing a current string holder and assigning it a string of dialogue
 	public CurrentString currentString;
@@ -26,9 +26,8 @@ public class DialogueTrigger : MonoBehaviour
 	//Setting the correct dialogue for where you're at in the game. 
 	public void startDialogue()
 	{
-		dialogue.exitEvent = TriggerExitFunction;
 		currentString.value = dialogue; //ressetting the currentString to the specific dialogue we want
-		TriggerSetEvent.Invoke(); //now we evoke the set dialogue fundtion to enter the dialogue screen - GO TO StringListOperator
+		TriggerSetEvent.Invoke(); //now we evoke the set dialogue function to enter the dialogue screen - GO TO StringListOperator
 		
 	}
 
@@ -36,10 +35,7 @@ public class DialogueTrigger : MonoBehaviour
 	//Cycling through and updating the UI with the dialogue loaded in from above;
 	public void cycleDialogue()
 	{
-		
 		TriggerCycleEvent.Invoke();
-		
-		
 	}
 
 

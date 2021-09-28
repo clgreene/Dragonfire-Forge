@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 //This is a Manager class script that organizes and loads in correct dialogue for an NPCs dialogue trigger scripts. It needs the DialogueTrigger script, IntData and StringListData Scriptable Objects
 //This scripts functions are called by dialogue trigger scripts from items or characters. 
@@ -10,8 +11,9 @@ using UnityEngine.UI;
 public class StringListOperator : MonoBehaviour
 {
 
-    //establishing the dialogue #, a currentList for to load into the text, and all the available dialogue options
-    public IntData dialogue;
+    public UnityEvent dialogueEndFunction;
+
+    //establishing the dialogue, a currentList for to load into the text, and all the available dialogue options
     public CurrentString currentList;
     
 
@@ -24,7 +26,6 @@ public class StringListOperator : MonoBehaviour
     {
 
         returnValue = currentList.value.stringList[i];
-
         obj.text = returnValue;
 
     }
@@ -53,7 +54,7 @@ public class StringListOperator : MonoBehaviour
     {
         obj.text = null;
         i = 0;
-        currentList.value.exitFunction();
+        dialogueEndFunction.Invoke();
 
     }
 

@@ -7,7 +7,8 @@ using UnityEngine;
 public class ListData : ScriptableObject
 {
 
-    public List<Vector3> value;
+    public List<Vector3> positionValue;
+    public List<bool> boolValue;
     public bool listSet;
     public bool listOver;
     public int number;

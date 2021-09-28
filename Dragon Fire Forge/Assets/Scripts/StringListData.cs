@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 
 //This string list data assett was created primarily for a branching dialogue system using this data, IntData, my DialogueTrigger Script and most importantly my StringListOperator script.
@@ -12,14 +10,7 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class StringListData : ScriptableObject
 {
-    public UnityEvent exitEvent;
 
     public List<string> stringList;
 
-    public void exitFunction()
-    {
-        exitEvent.Invoke();
-    }
-
- 
 }

@@ -224,8 +224,15 @@ MonoBehaviour:
   - {fileID: 1624746207552546792}
   - {fileID: 1624746206834987063}
   - {fileID: 1624746207992998981}
+  right: 0000010001010001
   arrowPositions: {fileID: 11400000, guid: 180d665e573d09642ac41834edea7c9a, type: 2}
-  length: 0
+  rightButton: {fileID: 11400000, guid: ad07390ac9e3def4c9b435d67525d311, type: 2}
+  leftButton: {fileID: 11400000, guid: 6c7f2d0a0765a4940963b696b5a21882, type: 2}
+  bellowsGame: {fileID: 0}
+  nextArrow: 0
+  initialize: 0
+  tooFar: 0.65
+  perfect: -0.48
 --- !u!1 &1624746207552546792
 GameObject:
   m_ObjectHideFlags: 0

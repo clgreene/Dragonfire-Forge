@@ -14,6 +14,8 @@ public class BellowsGame : MonoBehaviour
     public int nextArrow;
     public BoolData start;
     public BoolData playing;
+    public BoolData leftButton;
+    public BoolData rightButton;
     public int arrow = 0;
     public IntData weaponMat;
     public ListData arrowPositions;
@@ -40,10 +42,9 @@ public class BellowsGame : MonoBehaviour
     {
         if (start.value == true)
         {
-            if (weaponMat.value != 0) // ! 
-            {
+            
                 StartCoroutine(initializeGame());
-            }
+            
 
             
             //if mousebuttondown then access arrow position, play arrow animation based on position, and hide arrow until off screen (unless game object resets itself when reused, then just hide arrow)
@@ -67,7 +68,7 @@ public class BellowsGame : MonoBehaviour
     public IEnumerator initializeGame()
     {
         start.value = false;
-        arrowPositions.value.Clear();
+        arrowPositions.positionValue.Clear();
         randomInt = Random.Range(1, arrowGames.Length);
         currentGame = Instantiate(arrowGames[randomInt - 1]);
         playing.value = true;
@@ -88,26 +89,13 @@ public class BellowsGame : MonoBehaviour
 
     }
 
-    public IEnumerator rightButton()
+    public void rightButtonPressed()
     {
-        yield return new WaitForSeconds(0f);
-        arrowPositions.number++;
-
-
-        //checkArrowDirection
-        //CompareArrowPosition to Best Position
-        //run animation / hide arrow
-        //calculate score and add score
-        //move to next arrow
-
+        rightButton.value = true;
     }
 
-    public IEnumerator leftButton()
+    public void leftButtonPressed()
     {
-        yield return new WaitForSeconds(0f);
-        arrowPositions.number++;
-
+        leftButton.value = true;
     }
-
-
 }
