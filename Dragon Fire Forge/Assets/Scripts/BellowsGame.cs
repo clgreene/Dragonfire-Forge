@@ -60,9 +60,12 @@ public class BellowsGame : MonoBehaviour
             currentGame.transform.Translate(0, -1 * Time.deltaTime, 0);
             
         }
-        
-        //reset the next arrow for the buttons when arrow has travelled to far
- 
+
+        if (arrowPositions.listOver == true)
+        {
+            Destroy(currentGame);
+        }
+
     }
 
     public IEnumerator initializeGame()
@@ -71,7 +74,6 @@ public class BellowsGame : MonoBehaviour
         arrowPositions.positionValue.Clear();
         randomInt = Random.Range(1, arrowGames.Length);
         currentGame = Instantiate(arrowGames[randomInt - 1]);
-        playing.value = true;
         StartCoroutine(countDown());
         arrow = 0;
         yield return new WaitForSeconds(0f);
