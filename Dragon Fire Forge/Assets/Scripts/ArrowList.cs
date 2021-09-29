@@ -9,6 +9,7 @@ public class ArrowList : MonoBehaviour
     public GameObject[] arrowList;
     public bool[] right;
     public ListData arrowPositions;
+    public bool positionUpdate;
 
     public Vector3 position;
     public float distance;
@@ -35,6 +36,7 @@ public class ArrowList : MonoBehaviour
         initialize = true;
         nextArrow = 0;
         score.value = 0;
+        positionUpdate = false;
 
         
         
@@ -48,13 +50,13 @@ public class ArrowList : MonoBehaviour
         
 
         //tracking position for each item in array
-        while (arrowPositions.number < (arrowList.Length - 1) && initialize == true)
+        while (arrowPositions.number < (arrowList.Length) && initialize == true)
         {
             arrowPositions.positionValue.Add(arrowList[arrowPositions.number].transform.position);
             arrowPositions.boolValue.Add(right[arrowPositions.number]);
             arrowPositions.number++;
 
-            if (arrowPositions.number == (arrowList.Length - 1))
+            if (arrowPositions.number == (arrowList.Length))
             {
 
                 arrowPositions.listSet = true;
@@ -69,11 +71,17 @@ public class ArrowList : MonoBehaviour
         {
 
             //!!!possibly make this a while loop whose condition resets at the end of update, not the while loop!!!
-            arrowPositions.positionValue[arrowPositions.number] = arrowList[arrowPositions.number].transform.position;
-            arrowPositions.number++;
+            while(positionUpdate != true)
+            {
+                arrowPositions.positionValue[arrowPositions.number] = arrowList[arrowPositions.number].transform.position;
+                arrowPositions.number++;
+
+                if (arrowPositions.number == arrowList.Length) positionUpdate = true;
+            }
+            
 
             //reset arrow counter to zero after reaching the end of the list
-            if (arrowPositions.number == (arrowList.Length - 1))
+            if (arrowPositions.number == (arrowList.Length))
             {
                 arrowPositions.number = 0;
             }
@@ -85,7 +93,7 @@ public class ArrowList : MonoBehaviour
                 nextArrow++;
                 if (nextArrow == arrowList.Length)
                 {
-                    score.value = (Mathf.FloorToInt(score.value / arrowList.Length));
+                    score.value = (Mathf.FloorToInt(score.value /arrowList.Length));
                     arrowPositions.listOver = true;
 
                 }
@@ -96,7 +104,7 @@ public class ArrowList : MonoBehaviour
             {
                 if (right[nextArrow] == true)
                 {
-                    position = arrowPositions.positionValue[nextArrow];
+                    position.y = arrowList[nextArrow].transform.position.y;
                     distance = Mathf.Abs(perfect - position.y);
                     if (distance <= .01) 
                     {
@@ -106,7 +114,7 @@ public class ArrowList : MonoBehaviour
 
                     else if (distance <= .17) 
                     {
-                        arrowScore = (Mathf.FloorToInt(distance * 588) + 5);
+                        arrowScore = (Mathf.FloorToInt((.17f - distance) * 900));
                     }
 
                     else
@@ -115,15 +123,17 @@ public class ArrowList : MonoBehaviour
                     }
 
                     score.value += arrowScore;
-                    
+
+
 
                     Debug.Log(distance);
+                    Debug.Log(arrowScore);
                 }
 
-                
 
                 arrowList[nextArrow].SetActive(false);
                 nextArrow++;
+
                 if (nextArrow == arrowList.Length)
                 {
                     score.value = (Mathf.FloorToInt(score.value/arrowList.Length));
@@ -138,9 +148,9 @@ public class ArrowList : MonoBehaviour
             {
                 if (right[nextArrow] == false)
                 {
-                    position = arrowPositions.positionValue[nextArrow];
+                    position.y = arrowList[nextArrow].transform.position.y;
                     distance = Mathf.Abs(perfect - position.y);
-                    if (distance <= .01)
+                    if (distance <= .06)
                     {
                         arrowScore = 100;
 
@@ -148,7 +158,7 @@ public class ArrowList : MonoBehaviour
 
                     else if (distance <= .17)
                     {
-                        arrowScore = (Mathf.FloorToInt(distance * 588) + 5);
+                        arrowScore = (Mathf.FloorToInt((.17f - distance) * 900));
                     }
 
                     else
@@ -158,8 +168,8 @@ public class ArrowList : MonoBehaviour
 
                     score.value += arrowScore;
 
-
                     Debug.Log(distance);
+                    Debug.Log(arrowScore);
                 }
 
 
@@ -175,6 +185,7 @@ public class ArrowList : MonoBehaviour
             }
 
 
+            positionUpdate = false;
             //when game ends, we need to avg the score with the array length, set score in weaponStats, and list game as over.
 
         }

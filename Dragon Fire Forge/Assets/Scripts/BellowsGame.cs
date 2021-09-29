@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class BellowsGame : MonoBehaviour
@@ -9,7 +10,7 @@ public class BellowsGame : MonoBehaviour
 
     public GameObject[] arrowGames;
     public GameObject currentGame;
-    public int randomInt = 1;
+    public int randomInt;
     public bool foundNextArrow;
     public int nextArrow;
     public BoolData start;
@@ -19,6 +20,13 @@ public class BellowsGame : MonoBehaviour
     public int arrow = 0;
     public IntData weaponMat;
     public ListData arrowPositions;
+    public float matAdj;
+
+    public WeaponStats smeltingScore;
+
+    public GameController GC;
+
+    public Text overlay;
 
     public CurrentContract currentContract;
 
@@ -30,6 +38,7 @@ public class BellowsGame : MonoBehaviour
         arrowPositions.listOver = false;
         arrowPositions.listSet = false;
         arrowPositions.number = 0;
+        matAdj = .3f;
 
         //setting current contract expectations
         
@@ -57,13 +66,26 @@ public class BellowsGame : MonoBehaviour
         
         if (arrowPositions.listOver == false && arrowPositions.listSet == true)
         {
-            currentGame.transform.Translate(0, -1 * Time.deltaTime, 0);
+            currentGame.transform.Translate(0, -1 * matAdj * Time.deltaTime, 0);
             
         }
 
         if (arrowPositions.listOver == true)
         {
             Destroy(currentGame);
+            overlay.text = smeltingScore.smeltScore.value.ToString();
+            //GC.startForging();
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            rightButton.value = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            leftButton.value = true;
         }
 
     }
@@ -72,9 +94,10 @@ public class BellowsGame : MonoBehaviour
     {
         start.value = false;
         arrowPositions.positionValue.Clear();
-        randomInt = Random.Range(1, arrowGames.Length);
-        currentGame = Instantiate(arrowGames[randomInt - 1]);
+        arrowPositions.boolValue.Clear();
+        randomInt = Random.Range(0, arrowGames.Length - 1);
         StartCoroutine(countDown());
+        currentGame = Instantiate(arrowGames[randomInt]);
         arrow = 0;
         yield return new WaitForSeconds(0f);
 
@@ -85,6 +108,12 @@ public class BellowsGame : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0f);
+        overlay.text = "Ready...";
+        yield return new WaitForSeconds(2f);
+        overlay.text = "Go!";
+        yield return new WaitForSeconds(1f);
+        overlay.text = null;
+
         //play start animation
 
 
