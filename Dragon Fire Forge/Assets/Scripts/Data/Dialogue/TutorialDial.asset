@@ -13,14 +13,21 @@ MonoBehaviour:
   m_Name: TutorialDial
   m_EditorClassIdentifier: 
   stringList:
-  - Who are you?
-  - My new apprentice eh? So the guild though sending another one was a good idea?
-  - What happened to the others you ask?
-  - Apparently, I'm not a "people person."
-  - Also, living on the edge of the dark lands isn't the safest place to be.
-  - Anyways, lets get you trained up a little so you know what we do here.
-  - The Dragonfire Forge is the last stop for heros and adventurers to get new or
-    repair weapons.
-  - It's important that we provide the best gear for our clients.
+  - Welcome to the Dragonfire Forge!
+  - The guild sent you to be my replacement, huh?
+  - Must be some serious forging skills you've got if they think you've got what
+    it takes to run this place.
+  - The Dragonfire Forge is any adventurers last stop to gear up before taking on
+    the evils of the Darklands.
+  - Because of that, the quality of our weapons directly contributes to keeping evil
+    out of our lands.
+  - If our weapons are trash, or if you only cater to certain adventurers, we'll
+    eventually get overrun.
+  - And after us, the entire kingdom.
+  - That's why it's important that we provide the best gear for our clients, and
+    why we should choose those clients carefully
   - We're a little low on our stock right now, but lets see what you can do.
-  - Grab some of that steel and toss it in the forge.
+  - Grab some steel and throw it in the forge.
+  - Once it's heating, you'll have to operate bellows from both sides to keep the
+    temperature up and the heat even.
+  - Whenever you're ready.

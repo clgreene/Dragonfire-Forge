@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     public GameObject WeaponDisplay;
     public GameObject CreditsScreen;
     public GameObject TutorialOption;
+    public GameObject MatChoices;
 
 
     public BoolData startBellows;
@@ -46,11 +47,17 @@ public class GameController : MonoBehaviour
         Dialogue.SetActive(true);
     }
 
+    public void chooseMat()
+    {
+        Dialogue.SetActive(false);
+        SmeltGame.SetActive(true);
+        MatChoices.SetActive(true);
+    }
+
     public void startContract()
     {
         Dialogue.SetActive(false);
         SmeltGame.SetActive(true);
-        weaponMat.value = 0;
         startBellows.value = true;
 
     }

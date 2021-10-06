@@ -106,7 +106,7 @@ public class ArrowList : MonoBehaviour
                 {
                     position.y = arrowList[nextArrow].transform.position.y;
                     distance = Mathf.Abs(perfect - position.y);
-                    if (distance <= .01) 
+                    if (distance <= .06) 
                     {
                         arrowScore = 100;
 
