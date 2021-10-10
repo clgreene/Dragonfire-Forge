@@ -26,10 +26,11 @@ public class ForgeGameManager : MonoBehaviour
     public GameObject[] lineNineteen;
 
     public GameObject[] currentLine;
+    public GameObject[] previousLine;
 
     public IntData lineNumber;
 
-    public IntData[] currentLineSize;
+    public int[] currentLineSize;
 
     public IntData weaponMat;
 
@@ -39,7 +40,11 @@ public class ForgeGameManager : MonoBehaviour
 
     public bool reverse;
 
+    public bool firstLine;
+
     int linePosition;
+
+    int activeAmount;
     
 
 
@@ -47,29 +52,66 @@ public class ForgeGameManager : MonoBehaviour
     void Start()
     {
         currentLine = lineOne;
+        previousLine = null;
         routineFinished = true;
         lineNumber.value = 0;
+        activeAmount = 0;
+        firstLine = true;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         switch (lineNumber.value)
         {
             case 0:
                 currentLine = lineOne;
                 break;
+            case 1:
+                currentLine = lineTwo;
+                previousLine = lineOne;
+                break;
+            case 2:
+                currentLine = lineThree;
+                previousLine = lineTwo;
+                break;
         }
 
-        
+        //if (currentLine.Length == 0) - game end
 
         if (routineFinished == true) StartCoroutine(UpdateSpeed(weaponMat.value));
 
-        
+        if (stopped == true)
+        {
+            lineNumber.value++;
+            if (firstLine == false)
+            {
+                for (int i = 0; i < 18; i++)
+                {
+                    if (currentLine[i].activeSelf != previousLine[i].activeSelf)
+                    {
+                        currentLine[i].SetActive(false);
+                    }
 
-        //UpdateSpeed(weaponMat.value, currentLine[lineNumber.value]);
+                    if (currentLine[i].activeSelf)
+                    {
+                        activeAmount++;
+                    }
+
+                    //if (activeAmount == 0) - game end
+
+                }
+            }
+            firstLine = false;
+            stopped = false;
+        }
 
 
+    }
+
+    public void forgeButton()
+    {
+        stopped = true;
     }
 
     public IEnumerator UpdateSpeed(int speed)
@@ -99,7 +141,7 @@ public class ForgeGameManager : MonoBehaviour
             currentLine[i].SetActive(false);
         }
 
-        for (int lineSize = 0; lineSize < currentLineSize[lineNumber.value].value; lineSize++)
+        for (int lineSize = 0; lineSize < currentLineSize[lineNumber.value]; lineSize++)
         {
 
             currentLine[lineSize + linePosition].SetActive(true);
@@ -112,7 +154,7 @@ public class ForgeGameManager : MonoBehaviour
             linePosition++;
         }
 
-        if (linePosition + currentLineSize[lineNumber.value].value > 18)
+        if (linePosition + currentLineSize[lineNumber.value] > 18)
         {
             reverse = true;
             linePosition--;
