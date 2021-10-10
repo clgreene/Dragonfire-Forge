@@ -878,6 +878,7 @@ MonoBehaviour:
   - {fileID: 8492849201595090726}
   right: 0000010001010001000001010001000001010000010000010100010000000100010001000100010001000100010001
   arrowPositions: {fileID: 11400000, guid: 180d665e573d09642ac41834edea7c9a, type: 2}
+  positionUpdate: 0
   position: {x: 0, y: 0, z: 0}
   distance: 0
   rightButton: {fileID: 11400000, guid: ad07390ac9e3def4c9b435d67525d311, type: 2}
@@ -888,7 +889,7 @@ MonoBehaviour:
   tooFar: 0.65
   perfect: -0.48
   arrowScore: 0
-  score: {fileID: 11400000, guid: 5ceddb6d593ae7141a363b636f3cbf05, type: 2}
+  weaponStats: {fileID: 11400000, guid: 7265e44a35b3028429d0ae67f14cbfe2, type: 2}
 --- !u!1 &1624746207552546792
 GameObject:
   m_ObjectHideFlags: 0

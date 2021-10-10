@@ -6,12 +6,12 @@ public class MaterialButton : MonoBehaviour
 {
 
     public int matNumber;
-    public IntData currentMatNumber;
+    public WeaponStats weaponStats;
 
 
     public void matButton()
     {
-        currentMatNumber.value = matNumber;
+        weaponStats.weaponMat = matNumber;
     }
 
 }

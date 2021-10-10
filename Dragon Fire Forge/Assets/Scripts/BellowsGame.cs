@@ -22,7 +22,7 @@ public class BellowsGame : MonoBehaviour
     public ListData arrowPositions;
     public float matAdj;
 
-    public WeaponStats smeltingScore;
+    public WeaponStats weaponStats;
 
     public GameController GC;
 
@@ -73,7 +73,7 @@ public class BellowsGame : MonoBehaviour
         if (arrowPositions.listOver == true)
         {
             Destroy(currentGame);
-            overlay.text = smeltingScore.smeltScore.value.ToString();
+            overlay.text = weaponStats.smeltScore.ToString();
             //GC.startForging();
 
         }

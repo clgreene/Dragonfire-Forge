@@ -7,14 +7,14 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     //weapon characteristics
-    public IntData weaponType;
-    public IntData weaponMat;
-    public IntData weaponEnch;
+    public int weaponType;
+    public int weaponMat;
+    public int weaponEnch;
 
     //weapon qualitys
-    public IntData smeltScore;
-    public IntData forgeScore;
-    public IntData quenchScore;
+    public int smeltScore;
+    public int forgeScore;
+    public int quenchScore;
 
 
     // Start is called before the first frame update

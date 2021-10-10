@@ -31,26 +31,33 @@ public class GameController : MonoBehaviour
     public GameObject MatChoices;
 
 
+
     public BoolData startBellows;
     public IntData weaponMat;
+    public IntData steel;
+    public IntData haderite;
+    public IntData mithril;
+    public IntData asterite;
 
     public void NewGame()
     {
         HomeScreen.SetActive(false);
+        steel.value = 10;
+        haderite.value = 0;
+        mithril.value = 0;
+        asterite.value = 0;
         TutorialOption.SetActive(true);
     }
 
     public void tutorial()
     {
         TutorialOption.SetActive(false);
-        //ForgeScreen.SetActive(true);
         Dialogue.SetActive(true);
     }
 
     public void chooseMat()
     {
         Dialogue.SetActive(false);
-        SmeltGame.SetActive(true);
         MatChoices.SetActive(true);
     }
 
@@ -58,6 +65,7 @@ public class GameController : MonoBehaviour
     {
         Dialogue.SetActive(false);
         SmeltGame.SetActive(true);
+        MatChoices.SetActive(false);
         startBellows.value = true;
 
     }

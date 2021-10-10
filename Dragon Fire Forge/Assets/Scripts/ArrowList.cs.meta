@@ -3,7 +3,12 @@ guid: 71252667232fa3f45a60df45af6711e7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - arrowPositions: {instanceID: 0}
+  - rightButton: {instanceID: 0}
+  - leftButton: {instanceID: 0}
+  - bellowsGame: {instanceID: 0}
+  - weaponStats: {fileID: 11400000, guid: 7265e44a35b3028429d0ae67f14cbfe2, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

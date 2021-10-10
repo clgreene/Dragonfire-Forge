@@ -25,7 +25,7 @@ public class ArrowList : MonoBehaviour
     public float perfect;
 
     public int arrowScore;
-    public IntData score;
+    public WeaponStats weaponStats;
     
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class ArrowList : MonoBehaviour
         arrowPositions.listSet = false;
         initialize = true;
         nextArrow = 0;
-        score.value = 0;
+        weaponStats.smeltScore = 0;
         positionUpdate = false;
 
         
@@ -93,7 +93,7 @@ public class ArrowList : MonoBehaviour
                 nextArrow++;
                 if (nextArrow == arrowList.Length)
                 {
-                    score.value = (Mathf.FloorToInt(score.value /arrowList.Length));
+                    weaponStats.smeltScore = (Mathf.FloorToInt(weaponStats.smeltScore /arrowList.Length));
                     arrowPositions.listOver = true;
 
                 }
@@ -122,7 +122,7 @@ public class ArrowList : MonoBehaviour
                         arrowScore = 0;
                     }
 
-                    score.value += arrowScore;
+                    weaponStats.smeltScore += arrowScore;
 
 
 
@@ -136,7 +136,7 @@ public class ArrowList : MonoBehaviour
 
                 if (nextArrow == arrowList.Length)
                 {
-                    score.value = (Mathf.FloorToInt(score.value/arrowList.Length));
+                    weaponStats.smeltScore = (Mathf.FloorToInt(weaponStats.smeltScore/arrowList.Length));
                     arrowPositions.listOver = true;
                 }
                 rightButton.value = false;
@@ -166,7 +166,7 @@ public class ArrowList : MonoBehaviour
                         arrowScore = 0;
                     }
 
-                    score.value += arrowScore;
+                    weaponStats.smeltScore += arrowScore;
 
                     Debug.Log(distance);
                     Debug.Log(arrowScore);
@@ -177,7 +177,7 @@ public class ArrowList : MonoBehaviour
                 nextArrow++;
                 if (nextArrow == arrowList.Length)
                 {
-                    score.value = (Mathf.FloorToInt(score.value / arrowList.Length));
+                    weaponStats.smeltScore = (Mathf.FloorToInt(weaponStats.smeltScore / arrowList.Length));
                     arrowPositions.listOver = true;
 
                 }
