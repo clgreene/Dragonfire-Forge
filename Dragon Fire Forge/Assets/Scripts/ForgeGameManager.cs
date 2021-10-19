@@ -30,7 +30,7 @@ public class ForgeGameManager : MonoBehaviour
 
     public IntData lineNumber;
 
-    public int[] currentLineSize;
+    public IntArrayData currentLineSize;
 
     public IntData weaponMat;
 
@@ -141,7 +141,7 @@ public class ForgeGameManager : MonoBehaviour
             currentLine[i].SetActive(false);
         }
 
-        for (int lineSize = 0; lineSize < currentLineSize[lineNumber.value]; lineSize++)
+        for (int lineSize = 0; lineSize < currentLineSize.value[lineNumber.value]; lineSize++)
         {
 
             currentLine[lineSize + linePosition].SetActive(true);
@@ -154,7 +154,7 @@ public class ForgeGameManager : MonoBehaviour
             linePosition++;
         }
 
-        if (linePosition + currentLineSize[lineNumber.value] > 18)
+        if (linePosition + currentLineSize.value[lineNumber.value] > 18)
         {
             reverse = true;
             linePosition--;

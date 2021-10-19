@@ -39,6 +39,12 @@ public class GameController : MonoBehaviour
     public IntData mithril;
     public IntData asterite;
 
+
+    private void Update()
+    {
+        
+    }
+
     public void NewGame()
     {
         HomeScreen.SetActive(false);
