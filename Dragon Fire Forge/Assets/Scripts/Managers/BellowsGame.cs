@@ -55,12 +55,6 @@ public class BellowsGame : MonoBehaviour
                 StartCoroutine(initializeGame());
             
 
-            
-            //if mousebuttondown then access arrow position, play arrow animation based on position, and hide arrow until off screen (unless game object resets itself when reused, then just hide arrow)
-            //if arrow position is past too far position, play missed animation at position, and hide arrow
-            //increase arrow number by one
-            //if arrow number is larger than list, playing is false.
-
 
         }
         
@@ -74,6 +68,10 @@ public class BellowsGame : MonoBehaviour
         {
             Destroy(currentGame);
             StartCoroutine(scoreDisplay());
+            arrowPositions.listOver = false;
+            arrowPositions.listSet = false;
+            start.value = false;
+            arrowPositions.listOver = false;
 
         }
 

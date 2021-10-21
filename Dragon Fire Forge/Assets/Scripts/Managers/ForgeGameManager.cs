@@ -46,7 +46,7 @@ public class ForgeGameManager : MonoBehaviour
 
     public BoolData playing;
 
-    int linePosition;
+    public int linePosition;
 
     int activeAmount;
 
@@ -164,7 +164,7 @@ public class ForgeGameManager : MonoBehaviour
                 lineNumber.value++;
                 if (firstLine == false)
                 {
-                    for (int i = 0; i < 18; i++)
+                    for (int i = 0; i < 25; i++)
                     {
                         //deleting overhanging lines
                         if (currentLine[i].activeSelf != previousLine[i].activeSelf)
@@ -230,7 +230,7 @@ public class ForgeGameManager : MonoBehaviour
                 break;
         }
 
-        for (int i = 0; i < 18; i++)
+        for (int i = 0; i < 25; i++)
         {
             currentLine[i].SetActive(false);
         }
@@ -250,25 +250,28 @@ public class ForgeGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        if (reverse == false)
+        if (playing.value == true)
         {
-            linePosition++;
-        }
+            if (reverse == false)
+            {
+                linePosition++;
+            }
 
-        if (linePosition + currentLineSize.value[lineNumber.value] > 18)
-        {
-            reverse = true;
-            linePosition--;
-        }
+            if (linePosition + currentLineSize.value[lineNumber.value] > 25)
+            {
+                reverse = true;
+                linePosition--;
+            }
 
-        if (reverse == true)
-        {
-            linePosition--;
-        }
+            if (reverse == true)
+            {
+                linePosition--;
+            }
 
-        if (linePosition == 0)
-        {
-            reverse = false;
+            if (linePosition == 0)
+            {
+                reverse = false;
+            }
         }
 
         routineFinished = true;

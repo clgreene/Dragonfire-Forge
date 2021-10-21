@@ -90,16 +90,16 @@ public class GameController : MonoBehaviour
         switch (weaponInfo.weaponEdge)
         {
             case 0:
-                currentEdge = standardEdge;
+                currentEdge.value = strongEdge.value;
                 break;
             case 1:
-                currentEdge = sharpEdge;
+                currentEdge.value = sharpEdge.value;
                 break;
             case 2:
-                currentEdge = strongEdge;
+                currentEdge.value = strongEdge.value;
                 break;
             case 3:
-                currentEdge = bluntEdge;
+                currentEdge.value = bluntEdge.value;
                 break;
 
         }
