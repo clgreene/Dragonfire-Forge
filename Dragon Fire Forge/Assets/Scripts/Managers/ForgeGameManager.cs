@@ -162,6 +162,14 @@ public class ForgeGameManager : MonoBehaviour
             if (stopped == true)
             {
                 lineNumber.value++;
+                if (firstLine == true)
+                {
+                    for (int j = 0; j < ((25 - currentLineSize.value[lineNumber.value - 1]) / 2); j++)
+                    {
+                        currentLine[j].SetActive(false);
+                        currentLine[24 - j].SetActive(false);
+                    }
+                }
                 if (firstLine == false)
                 {
                     for (int i = 0; i < 25; i++)
@@ -177,7 +185,7 @@ public class ForgeGameManager : MonoBehaviour
                         for (int j = 0; j < ((25 - currentLineSize.value[lineNumber.value - 1])/2); j++)
                         {
                             currentLine[j].SetActive(false);
-                            currentLine[25 - j].SetActive(false);
+                            currentLine[24 - j].SetActive(false);
                         }
 
                         if (currentLine[i].activeSelf)
