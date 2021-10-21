@@ -172,6 +172,14 @@ public class ForgeGameManager : MonoBehaviour
                             currentLine[i].SetActive(false);
                         }
 
+                        //delete lines not centered
+                        
+                        for (int j = 0; j < ((25 - currentLineSize.value[lineNumber.value - 1])/2); j++)
+                        {
+                            currentLine[j].SetActive(false);
+                            currentLine[25 - j].SetActive(false);
+                        }
+
                         if (currentLine[i].activeSelf)
                         {
                             activeAmount++;
@@ -204,6 +212,14 @@ public class ForgeGameManager : MonoBehaviour
     public void forgeButton()
     {
         stopped = true;
+    }
+
+    public IEnumerator displayScore()
+    {
+
+
+
+        yield return new WaitForSeconds(2f);
     }
 
 
