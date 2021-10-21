@@ -73,8 +73,7 @@ public class BellowsGame : MonoBehaviour
         if (arrowPositions.listOver == true)
         {
             Destroy(currentGame);
-            overlay.text = weaponStats.smeltScore.ToString();
-            //GC.startForging();
+            StartCoroutine(scoreDisplay());
 
         }
 
@@ -101,6 +100,13 @@ public class BellowsGame : MonoBehaviour
         arrow = 0;
         yield return new WaitForSeconds(0f);
 
+    }
+
+    public IEnumerator scoreDisplay()
+    {
+        overlay.text = weaponStats.smeltScore.ToString();
+        yield return new WaitForSeconds(2f);
+        GC.startForging();
     }
 
 

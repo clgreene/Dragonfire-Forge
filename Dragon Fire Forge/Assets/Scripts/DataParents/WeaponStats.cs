@@ -10,6 +10,7 @@ public class WeaponStats : ScriptableObject
     public int weaponType;
     public int weaponMat;
     public int weaponEnch;
+    public int weaponEdge;
 
     //weapon qualitys
     public int smeltScore;

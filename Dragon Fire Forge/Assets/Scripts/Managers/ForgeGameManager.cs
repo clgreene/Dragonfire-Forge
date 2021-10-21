@@ -49,6 +49,8 @@ public class ForgeGameManager : MonoBehaviour
     int linePosition;
 
     int activeAmount;
+
+    public GameController GC;
     
 
 
@@ -181,7 +183,14 @@ public class ForgeGameManager : MonoBehaviour
                     if (activeAmount == 0)
                     {
                         playing.value = false;
+                        GC.displayWeapon();
+
                     }
+
+                    activeAmount = 0;
+
+
+
                 }
 
                 firstLine = false;
@@ -189,16 +198,16 @@ public class ForgeGameManager : MonoBehaviour
             }
         }
 
-        
-
-
     }
 
+    //stop line call
     public void forgeButton()
     {
         stopped = true;
     }
 
+
+    //bounce lines back and forth
     public IEnumerator UpdateSpeed(int speed)
     {
         routineFinished = false;
@@ -230,6 +239,13 @@ public class ForgeGameManager : MonoBehaviour
         {
 
             currentLine[lineSize + linePosition].SetActive(true);
+
+            if (currentLineSize.value[lineNumber.value] == 0)
+            {
+                playing.value = false;
+                GC.displayWeapon();
+            }
+
         }
 
         yield return new WaitForSeconds(waitTime);

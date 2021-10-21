@@ -24,14 +24,21 @@ public class GameController : MonoBehaviour
     public GameObject QuenchGame;
     public GameObject WeaponSelection;
     public GameObject PauseScreen;
-    public GameObject WeaponInfo;
+    public WeaponStats weaponInfo;
     public GameObject WeaponDisplay;
     public GameObject CreditsScreen;
     public GameObject TutorialOption;
     public GameObject MatChoices;
 
 
+    //forge elements
+    public IntArrayData currentEdge;
+    public IntArrayData standardEdge;
+    public IntArrayData sharpEdge;
+    public IntArrayData strongEdge;
+    public IntArrayData bluntEdge;
 
+    //bellows elements
     public BoolData startBellows;
     public IntData weaponMat;
     public IntData steel;
@@ -44,7 +51,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
 
     public void NewGame()
@@ -80,10 +87,35 @@ public class GameController : MonoBehaviour
 
     public void startForging()
     {
+        switch (weaponInfo.weaponEdge)
+        {
+            case 0:
+                currentEdge = standardEdge;
+                break;
+            case 1:
+                currentEdge = sharpEdge;
+                break;
+            case 2:
+                currentEdge = strongEdge;
+                break;
+            case 3:
+                currentEdge = bluntEdge;
+                break;
+
+        }
+
         ForgeScreen.SetActive(true);
         SmeltGame.SetActive(false);
         ForgeGame.SetActive(true);
         forgePlaying.value = true;
+    }
+
+    public void displayWeapon()
+    {
+        ForgeScreen.SetActive(false);
+        ForgeGame.SetActive(false);
+
+
     }
 
     public void noTutorial()
