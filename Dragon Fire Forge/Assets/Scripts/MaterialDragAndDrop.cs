@@ -42,8 +42,6 @@ public class MaterialDragAndDrop : MonoBehaviour
 
                 }
 
-
-             
             }
 
             if (touch.phase == TouchPhase.Moved)

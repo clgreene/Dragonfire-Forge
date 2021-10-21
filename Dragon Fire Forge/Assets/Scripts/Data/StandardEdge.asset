@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e082fa4d1f53d974385c91ee8dfc84ee, type: 3}
-  m_Name: StrongEdgeArray
+  m_Name: StandardEdge
   m_EditorClassIdentifier: 
-  value: 1300000013000000130000001300000013000000130000001300000013000000110000000f0000000d0000000b000000090000000700000005000000030000000100000000000000
+  value: 

@@ -39,6 +39,8 @@ public class GameController : MonoBehaviour
     public IntData mithril;
     public IntData asterite;
 
+    public BoolData forgePlaying;
+
 
     private void Update()
     {
@@ -81,6 +83,7 @@ public class GameController : MonoBehaviour
         ForgeScreen.SetActive(true);
         SmeltGame.SetActive(false);
         ForgeGame.SetActive(true);
+        forgePlaying.value = true;
     }
 
     public void noTutorial()

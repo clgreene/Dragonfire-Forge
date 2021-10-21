@@ -28,6 +28,8 @@ public class ForgeGameManager : MonoBehaviour
     public GameObject[] currentLine;
     public GameObject[] previousLine;
 
+    public IntArrayData currentEdge;
+
     public IntData lineNumber;
 
     public IntArrayData currentLineSize;
@@ -42,6 +44,8 @@ public class ForgeGameManager : MonoBehaviour
 
     public bool firstLine;
 
+    public BoolData playing;
+
     int linePosition;
 
     int activeAmount;
@@ -51,6 +55,7 @@ public class ForgeGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playing.value = false;
         currentLine = lineOne;
         previousLine = null;
         routineFinished = true;
@@ -62,49 +67,129 @@ public class ForgeGameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        switch (lineNumber.value)
+
+        if (playing.value == true)
         {
-            case 0:
-                currentLine = lineOne;
-                break;
-            case 1:
-                currentLine = lineTwo;
-                previousLine = lineOne;
-                break;
-            case 2:
-                currentLine = lineThree;
-                previousLine = lineTwo;
-                break;
-        }
 
-        //if (currentLine.Length == 0) - game end
-
-        if (routineFinished == true) StartCoroutine(UpdateSpeed(weaponMat.value));
-
-        if (stopped == true)
-        {
-            lineNumber.value++;
-            if (firstLine == false)
+            //updating the current and previous lines
+            switch (lineNumber.value)
             {
-                for (int i = 0; i < 18; i++)
-                {
-                    if (currentLine[i].activeSelf != previousLine[i].activeSelf)
-                    {
-                        currentLine[i].SetActive(false);
-                    }
+                case 0:
+                    currentLine = lineOne;
+                    break;
+                case 1:
+                    currentLine = lineTwo;
+                    previousLine = lineOne;
+                    break;
+                case 2:
+                    currentLine = lineThree;
+                    previousLine = lineTwo;
+                    break;
+                case 3:
+                    currentLine = lineFour;
+                    previousLine = lineThree;
+                    break;
+                case 4:
+                    currentLine = lineFive;
+                    previousLine = lineFour;
+                    break;
+                case 5:
+                    currentLine = lineSix;
+                    previousLine = lineFive;
+                    break;
+                case 6:
+                    currentLine = lineSeven;
+                    previousLine = lineSix;
+                    break;
+                case 7:
+                    currentLine = lineEight;
+                    previousLine = lineSeven;
+                    break;
+                case 8:
+                    currentLine = lineNine;
+                    previousLine = lineEight;
+                    break;
+                case 9:
+                    currentLine = lineTen;
+                    previousLine = lineNine;
+                    break;
+                case 10:
+                    currentLine = lineEleven;
+                    previousLine = lineTen;
+                    break;
+                case 11:
+                    currentLine = lineTwelve;
+                    previousLine = lineEleven;
+                    break;
+                case 12:
+                    currentLine = lineThirteen;
+                    previousLine = lineTwelve;
+                    break;
+                case 13:
+                    currentLine = lineFourteen;
+                    previousLine = lineThirteen;
+                    break;
+                case 14:
+                    currentLine = lineFifteen;
+                    previousLine = lineFourteen;
+                    break;
+                case 15:
+                    currentLine = lineSixteen;
+                    previousLine = lineFifteen;
+                    break;
+                case 16:
+                    currentLine = lineSeventeen;
+                    previousLine = lineSixteen;
+                    break;
+                case 17:
+                    currentLine = lineEighteen;
+                    previousLine = lineSeventeen;
+                    break;
+                case 18:
+                    currentLine = lineNineteen;
+                    previousLine = lineEighteen;
+                    break;
 
-                    if (currentLine[i].activeSelf)
-                    {
-                        activeAmount++;
-                    }
-
-                    //if (activeAmount == 0) - game end
-
-                }
             }
-            firstLine = false;
-            stopped = false;
+
+
+            //updating the line position
+            if (routineFinished == true) StartCoroutine(UpdateSpeed(weaponMat.value));
+
+            //stop line movement and go to the next line
+            if (stopped == true)
+            {
+                lineNumber.value++;
+                if (firstLine == false)
+                {
+                    for (int i = 0; i < 18; i++)
+                    {
+                        //deleting overhanging lines
+                        if (currentLine[i].activeSelf != previousLine[i].activeSelf)
+                        {
+                            currentLine[i].SetActive(false);
+                        }
+
+                        if (currentLine[i].activeSelf)
+                        {
+                            activeAmount++;
+                        }
+
+                    }
+
+                    //ending the update loop
+                    if (activeAmount == 0)
+                    {
+                        playing.value = false;
+                    }
+                }
+
+                firstLine = false;
+                stopped = false;
+            }
         }
+
+        
 
 
     }
