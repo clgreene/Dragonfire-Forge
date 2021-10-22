@@ -120,7 +120,8 @@ public class GameController : MonoBehaviour
     {
         ForgeScreen.SetActive(false);
         ForgeGame.SetActive(false);
-        //set weapon background
+        displayBoard.SetActive(true);
+        
         //set weapon type and material from weapon stats
         //display weapon score with stars from weapon stats
         //dislpay contract score based on comparing contract and weapon stats
