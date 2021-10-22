@@ -41,12 +41,14 @@ public class GameController : MonoBehaviour
     //bellows elements
     public BoolData startBellows;
     public IntData weaponMat;
+    public inventoryData inv;
     public IntData steel;
     public IntData haderite;
     public IntData mithril;
     public IntData asterite;
 
     public BoolData forgePlaying;
+    public BoolData tutorialActive;
 
 
     private void Update()
@@ -57,16 +59,19 @@ public class GameController : MonoBehaviour
     public void NewGame()
     {
         HomeScreen.SetActive(false);
-        steel.value = 10;
-        haderite.value = 0;
-        mithril.value = 0;
-        asterite.value = 0;
+        inv.steel = 10;
+        inv.haderite = 0;
+        inv.mythril = 0;
+        inv.asterite = 0;
         TutorialOption.SetActive(true);
     }
 
     public void tutorial()
     {
         TutorialOption.SetActive(false);
+        tutorialActive.value = true;
+        weaponInfo.weaponType = 0;
+        inv.steel = 11;
         Dialogue.SetActive(true);
     }
 
@@ -91,15 +96,19 @@ public class GameController : MonoBehaviour
         {
             case 0:
                 currentEdge.value = strongEdge.value;
+                weaponInfo.weaponEdgeVolume = 200;
                 break;
             case 1:
                 currentEdge.value = sharpEdge.value;
+                weaponInfo.weaponEdgeVolume = 141;
                 break;
             case 2:
                 currentEdge.value = strongEdge.value;
+                weaponInfo.weaponEdgeVolume = 233;
                 break;
             case 3:
                 currentEdge.value = bluntEdge.value;
+                weaponInfo.weaponEdgeVolume = 159;
                 break;
 
         }
@@ -114,6 +123,14 @@ public class GameController : MonoBehaviour
     {
         ForgeScreen.SetActive(false);
         ForgeGame.SetActive(false);
+        //set weapon background
+        //set weapon type and material from weapon stats
+        //display weapon score with stars from weapon stats
+        //dislpay contract score based on comparing contract and weapon stats
+        //calculate money and reputation earned
+        //set button for continuing to the next contract
+        //update day counter
+        //update enemy map based on contract and weapon score
 
 
     }

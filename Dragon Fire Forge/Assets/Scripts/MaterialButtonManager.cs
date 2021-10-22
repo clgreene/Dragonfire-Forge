@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class MaterialButtonManager : MonoBehaviour
 {
-    public IntData steel;
-    public IntData haderite;
-    public IntData mithril;
-    public IntData asterite;
+    public inventoryData inv;
 
     public GameObject steelButton;
     public GameObject haderiteButton;
@@ -19,28 +16,28 @@ public class MaterialButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (steel.value == 0)
+        if (inv.steel == 0)
         {
             steelButton.SetActive(false);
         }
 
         else steelButton.SetActive(true);
 
-        if (haderite.value == 0)
+        if (inv.haderite == 0)
         {
             haderiteButton.SetActive(false);
         }
 
         else haderiteButton.SetActive(true);
 
-        if (mithril.value == 0)
+        if (inv.mythril == 0)
         {
             mithrilButton.SetActive(false);
         }
 
         else mithrilButton.SetActive(true);
 
-        if (asterite.value == 0)
+        if (inv.asterite == 0)
         {
             asteriteButton.SetActive(false);
         }

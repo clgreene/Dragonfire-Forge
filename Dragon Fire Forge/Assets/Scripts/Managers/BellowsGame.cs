@@ -94,9 +94,9 @@ public class BellowsGame : MonoBehaviour
         arrowPositions.boolValue.Clear();
         randomInt = Random.Range(0, arrowGames.Length - 1);
         StartCoroutine(countDown());
+        yield return new WaitForSeconds(3f);
         currentGame = Instantiate(arrowGames[randomInt]);
         arrow = 0;
-        yield return new WaitForSeconds(0f);
 
     }
 

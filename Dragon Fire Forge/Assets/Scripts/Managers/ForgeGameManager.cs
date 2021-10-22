@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ForgeGameManager : MonoBehaviour
 {
@@ -48,9 +49,12 @@ public class ForgeGameManager : MonoBehaviour
 
     public int linePosition;
 
-    int activeAmount;
+    float activeAmount;
+    float succesfulAmount;
 
     public GameController GC;
+
+    public Text overlay;
     
 
 
@@ -63,6 +67,7 @@ public class ForgeGameManager : MonoBehaviour
         routineFinished = true;
         lineNumber.value = 0;
         activeAmount = 0;
+        succesfulAmount = 0;
         firstLine = true;
     }
 
@@ -169,6 +174,15 @@ public class ForgeGameManager : MonoBehaviour
                         currentLine[j].SetActive(false);
                         currentLine[24 - j].SetActive(false);
                     }
+
+                    for (int i = 0; i < 25; i++)
+                    {
+                        if (currentLine[i].activeSelf)
+                        {
+                            succesfulAmount++;
+                        }
+                        
+                    }
                 }
                 if (firstLine == false)
                 {
@@ -191,6 +205,7 @@ public class ForgeGameManager : MonoBehaviour
                         if (currentLine[i].activeSelf)
                         {
                             activeAmount++;
+                            succesfulAmount++;
                         }
 
                     }
@@ -199,7 +214,7 @@ public class ForgeGameManager : MonoBehaviour
                     if (activeAmount == 0)
                     {
                         playing.value = false;
-                        GC.displayWeapon();
+                        StartCoroutine(displayScore());
 
                     }
 
@@ -224,10 +239,13 @@ public class ForgeGameManager : MonoBehaviour
 
     public IEnumerator displayScore()
     {
-
-
-
+        GC.ForgeGame.SetActive(false);
+        int score = (int) (succesfulAmount * 100 / GC.weaponInfo.weaponEdgeVolume);
+        GC.weaponInfo.forgeScore = score;
+        overlay.text = score.ToString();
         yield return new WaitForSeconds(2f);
+        overlay.text = "";
+        GC.displayWeapon();
     }
 
 
