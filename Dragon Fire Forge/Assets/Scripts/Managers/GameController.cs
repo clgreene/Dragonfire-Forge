@@ -11,8 +11,8 @@ public class GameController : MonoBehaviour
 {
 
     public GameObject HomeScreen;
-    public GameObject SaveSlotScreen;
-    public GameObject LoadGameScreen;
+    public GameObject ForgeButtons;
+    public GameObject ForgeBanner;
     public GameObject ForgeScreen;
     public GameObject SmeltScreen;
     //public GameObject QuenchScreen;
@@ -48,6 +48,8 @@ public class GameController : MonoBehaviour
     public BoolData tutorialActive;
 
     public weaponDisplay weaponDisplay;
+
+    public int day = 0;
 
 
     private void Update()
@@ -123,6 +125,7 @@ public class GameController : MonoBehaviour
         ForgeScreen.SetActive(false);
         ForgeGame.SetActive(false);
         blackScreen.SetActive(true);
+        WeaponDisplay.SetActive(true);
         weaponDisplay.displayWeapon();
 
         //update day counter
@@ -131,10 +134,21 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void newDay()
+    {
+        Dialogue.SetActive(false);
+        day++;
+        ForgeBanner.SetActive(true);
+        ForgeButtons.SetActive(true);
+
+    }
+
     public void TutorialEnd()
     {
         blackScreen.SetActive(false);
+        WeaponDisplay.SetActive(false);
         weaponDisplay.tutorialHideBox.SetActive(false);
+        Dialogue.SetActive(true);
         Destroy(weaponDisplay.weapon);
 
     }
@@ -142,6 +156,7 @@ public class GameController : MonoBehaviour
     public void noTutorial()
     {
         TutorialOption.SetActive(false);
+        newDay();
         //ForgeScreen.SetActive(true);
     }
 }

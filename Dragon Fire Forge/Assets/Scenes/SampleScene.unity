@@ -15170,7 +15170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &808785379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20693,8 +20693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HomeScreen: {fileID: 808785378}
-  SaveSlotScreen: {fileID: 2106628462}
-  LoadGameScreen: {fileID: 1088590269}
+  ForgeButtons: {fileID: 2106628462}
+  ForgeBanner: {fileID: 1088590269}
   ForgeScreen: {fileID: 1152892447}
   SmeltScreen: {fileID: 0}
   Dialogue: {fileID: 1398160792}
@@ -20704,8 +20704,8 @@ MonoBehaviour:
   WeaponSelection: {fileID: 0}
   PauseScreen: {fileID: 0}
   weaponInfo: {fileID: 11400000, guid: 7265e44a35b3028429d0ae67f14cbfe2, type: 2}
-  blackScreen: {fileID: 0}
-  WeaponDisplay: {fileID: 0}
+  blackScreen: {fileID: 1322045516}
+  WeaponDisplay: {fileID: 1526503807}
   CreditsScreen: {fileID: 0}
   TutorialOption: {fileID: 1914456012}
   MatChoices: {fileID: 632376785}
@@ -20718,8 +20718,9 @@ MonoBehaviour:
   weaponMat: {fileID: 11400000, guid: 4e0548fcb42103f4e813fa490563f326, type: 2}
   inv: {fileID: 11400000, guid: f608278ef2b9bd04b9fcc80dd8eb9ee8, type: 2}
   forgePlaying: {fileID: 11400000, guid: 521be83ef39f28e4ca9521dfe7bb4f00, type: 2}
-  tutorialActive: {fileID: 0}
-  weaponDisplay: {fileID: 0}
+  tutorialActive: {fileID: 11400000, guid: 39ce8ec3dee94684996655126436b6e2, type: 2}
+  weaponDisplay: {fileID: 1526503811}
+  day: 0
 --- !u!114 &1065249165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27130,7 +27131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1322045517
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31377,7 +31378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1526503808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38798,6 +38799,7 @@ GameObject:
   - component: {fileID: 1817973738}
   - component: {fileID: 1817973737}
   - component: {fileID: 1817973736}
+  - component: {fileID: 1817973739}
   m_Layer: 5
   m_Name: Continue Button
   m_TagString: Untagged
@@ -38868,7 +38870,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817973737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1065249164}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: TutorialEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1817973739}
+        m_TargetAssemblyTypeName: DialogueSetter, Assembly-CSharp
+        m_MethodName: setDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1817973737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38882,7 +38908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.68932873, b: 0.40899786, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -38907,6 +38933,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817973734}
   m_CullTransparentMesh: 1
+--- !u!114 &1817973739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817973734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93feffd3c5f9b6844a5ee4f3ef922b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentString: {fileID: 11400000, guid: 96f6278fe6a4e564a8d7cca872ff10b6, type: 2}
+  dialogue: {fileID: 11400000, guid: 5c65fa1124312b141b8f9ef78c084119, type: 2}
+  slo: {fileID: 1065249165}
+  dialText: {fileID: 22314932}
+  dialogueEndFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1065249164}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: newDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1820447571
 GameObject:
   m_ObjectHideFlags: 0
