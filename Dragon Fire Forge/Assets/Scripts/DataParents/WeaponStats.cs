@@ -17,17 +17,9 @@ public class WeaponStats : ScriptableObject
     public int smeltScore;
     public int forgeScore;
     public int quenchScore;
+    public int weaponScore;
+    public int contractScore;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public GameObject WeaponSelection;
     public GameObject PauseScreen;
     public WeaponStats weaponInfo;
-    public GameObject displayBoard;
+    public GameObject blackScreen;
     public GameObject WeaponDisplay;
     public GameObject CreditsScreen;
     public GameObject TutorialOption;
@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
 
     public BoolData forgePlaying;
     public BoolData tutorialActive;
+
+    public weaponDisplay weaponDisplay;
 
 
     private void Update()
@@ -120,16 +122,20 @@ public class GameController : MonoBehaviour
     {
         ForgeScreen.SetActive(false);
         ForgeGame.SetActive(false);
-        displayBoard.SetActive(true);
-        
-        //set weapon type and material from weapon stats
-        //display weapon score with stars from weapon stats
-        //dislpay contract score based on comparing contract and weapon stats
-        //calculate money and reputation earned
-        //set button for continuing to the next contract
+        blackScreen.SetActive(true);
+        weaponDisplay.displayWeapon();
+
         //update day counter
         //update enemy map based on contract and weapon score
 
+
+    }
+
+    public void TutorialEnd()
+    {
+        blackScreen.SetActive(false);
+        weaponDisplay.tutorialHideBox.SetActive(false);
+        Destroy(weaponDisplay.weapon);
 
     }
 
