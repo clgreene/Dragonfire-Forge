@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     public GameObject WeaponSelection;
     public GameObject PauseScreen;
     public WeaponStats weaponInfo;
+    public GameObject displayBoard;
     public GameObject WeaponDisplay;
     public GameObject CreditsScreen;
     public GameObject TutorialOption;
@@ -42,10 +43,6 @@ public class GameController : MonoBehaviour
     public BoolData startBellows;
     public IntData weaponMat;
     public inventoryData inv;
-    public IntData steel;
-    public IntData haderite;
-    public IntData mithril;
-    public IntData asterite;
 
     public BoolData forgePlaying;
     public BoolData tutorialActive;
