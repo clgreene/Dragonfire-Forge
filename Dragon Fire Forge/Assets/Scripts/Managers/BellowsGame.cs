@@ -53,8 +53,6 @@ public class BellowsGame : MonoBehaviour
         {
             
                 StartCoroutine(initializeGame());
-            
-
 
         }
         

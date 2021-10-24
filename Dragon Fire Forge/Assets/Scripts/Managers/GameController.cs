@@ -42,7 +42,16 @@ public class GameController : MonoBehaviour
     //bellows elements
     public BoolData startBellows;
     public IntData weaponMat;
+
+    //inventory texts
     public inventoryData inv;
+    public Text money;
+    public Text rep;
+    public Text steel;
+    public Text haderite;
+    public Text mythril;
+    public Text asterite;
+
 
     public BoolData forgePlaying;
     public BoolData tutorialActive;
@@ -55,11 +64,46 @@ public class GameController : MonoBehaviour
     private void Update()
     {
 
+        money.text = inv.money.ToString();
+        if (inv.reputation < 100) rep.text = "Apprentice";
+        else if (inv.reputation < 200) rep.text = "BlackSmith";
+        else if (inv.reputation < 300) rep.text = "Honored";
+        else if (inv.reputation < 400) rep.text = "Revered";
+        else if (inv.reputation >= 400) rep.text = "Legendary";
+        steel.text = inv.steel.ToString();
+        haderite.text = inv.haderite.ToString();
+        mythril.text = inv.mythril.ToString();
+        asterite.text = inv.asterite.ToString();
+
+
+
+    }
+
+    public void openContracts()
+    {
+
+    }
+
+    public void openMap()
+    {
+
+    }
+
+    public void openJournal()
+    {
+
+    }
+
+    public void openShop()
+    {
+
     }
 
     public void NewGame()
     {
         HomeScreen.SetActive(false);
+        inv.reputation = 0;
+        inv.money = 1000;
         inv.steel = 10;
         inv.haderite = 0;
         inv.mythril = 0;

@@ -7,7 +7,7 @@ public class inventoryData : ScriptableObject
 {
 
     public int money;
-    public int reputaion;
+    public int reputation;
     public int steel;
     public int haderite;
     public int mythril;
