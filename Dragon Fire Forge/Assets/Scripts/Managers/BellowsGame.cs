@@ -100,7 +100,7 @@ public class BellowsGame : MonoBehaviour
 
     public IEnumerator scoreDisplay()
     {
-        overlay.text = weaponStats.smeltScore.ToString();
+        overlay.text = weaponStats.smeltScore.ToString() + "%";
         yield return new WaitForSeconds(2f);
         GC.startForging();
     }
@@ -115,10 +115,6 @@ public class BellowsGame : MonoBehaviour
         overlay.text = "Go!";
         yield return new WaitForSeconds(1f);
         overlay.text = null;
-
-        //play start animation
-
-
 
     }
 

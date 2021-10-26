@@ -21475,6 +21475,7 @@ MonoBehaviour:
   firstLine: 0
   playing: {fileID: 11400000, guid: 521be83ef39f28e4ca9521dfe7bb4f00, type: 2}
   linePosition: 0
+  succesfulAmount: 0
   GC: {fileID: 1065249164}
   overlay: {fileID: 208900081}
 --- !u!1 &1067006283
@@ -29804,7 +29805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1444837801
 RectTransform:
   m_ObjectHideFlags: 0
