@@ -240,7 +240,7 @@ public class ForgeGameManager : MonoBehaviour
     public IEnumerator displayScore()
     {
         GC.ForgeGame.SetActive(false);
-        int score = (int)(succesfulAmount / GC.weaponInfo.weaponEdgeVolume);
+        int score = (int)(succesfulAmount * 100 / GC.weaponInfo.weaponEdgeVolume);
         GC.weaponInfo.forgeScore = score;
         overlay.text = score.ToString() + "%";
         yield return new WaitForSeconds(2f);

@@ -17,11 +17,10 @@ public class GameController : MonoBehaviour
     public GameObject SmeltScreen;
     //public GameObject QuenchScreen;
     public GameObject Dialogue;
-    //public GameObject Map;
-    //public GameObject Contracts;
+    public GameObject ContractScreen;
     public GameObject ForgeGame;
     public GameObject SmeltGame;
-    public GameObject QuenchGame;
+    //public GameObject QuenchGame;
     public GameObject WeaponSelection;
     public GameObject PauseScreen;
     public WeaponStats weaponInfo;
@@ -30,6 +29,7 @@ public class GameController : MonoBehaviour
     public GameObject CreditsScreen;
     public GameObject TutorialOption;
     public GameObject MatChoices;
+    public GameObject MapScreen;
 
 
     //forge elements
@@ -86,7 +86,12 @@ public class GameController : MonoBehaviour
 
     public void openMap()
     {
+        MapScreen.SetActive(true);
+    }
 
+    public void closeMap()
+    {
+        MapScreen.SetActive(false);
     }
 
     public void openJournal()
