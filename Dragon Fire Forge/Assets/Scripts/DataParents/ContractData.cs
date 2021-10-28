@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [CreateAssetMenu]
 public class ContractData : ScriptableObject
 {
-    public GameObject[] heroIcons;
+    
+    public Sprite[] heroIcons;
     public string[] heroNames;
     public string[] heroMonikers;
 
-    public GameObject heroIcon;
+    public Sprite heroIcon;
     public string heroName;
     public string moniker;
     public int race;
@@ -30,7 +32,7 @@ public class ContractData : ScriptableObject
 
 
 
-    void createContract()
+    public void createContract()
     {
         heroIcon = heroIcons[Random.Range(0, heroIcons.Length - 1)];
         heroName = heroNames[Random.Range(0, heroNames.Length - 1)];

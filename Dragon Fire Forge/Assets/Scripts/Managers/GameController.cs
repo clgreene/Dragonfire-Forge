@@ -81,7 +81,7 @@ public class GameController : MonoBehaviour
 
     public void openContracts()
     {
-
+        ContractScreen.SetActive(true);
     }
 
     public void openMap()

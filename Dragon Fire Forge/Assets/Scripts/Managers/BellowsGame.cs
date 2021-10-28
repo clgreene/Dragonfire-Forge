@@ -28,7 +28,7 @@ public class BellowsGame : MonoBehaviour
 
     public Text overlay;
 
-    public CurrentContract currentContract;
+    public ContractData currentContract;
 
     // Start is called before the first frame update
     void Start()
