@@ -52,6 +52,12 @@ public class GameController : MonoBehaviour
     public Text mythril;
     public Text asterite;
 
+    //contract elements
+    public ContractDisplay contractOne;
+    public ContractDisplay contractTwo;
+    public ContractDisplay contractThree;
+    public ContractData currentContract;
+
 
     public BoolData forgePlaying;
     public BoolData tutorialActive;
@@ -189,6 +195,10 @@ public class GameController : MonoBehaviour
         day++;
         ForgeBanner.SetActive(true);
         ForgeButtons.SetActive(true);
+        contractOne.generateContract();
+        contractTwo.generateContract();
+        contractThree.generateContract();
+
 
     }
 

@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe0fe4be2340874d82b6fd38824ff2c, type: 3}
   m_Name: ContractOne
   m_EditorClassIdentifier: 
-  heroIcons: []
+  heroIcons:
+  - {fileID: 21300000, guid: 8b8c03274f63ba046954f594f42e46d4, type: 3}
+  - {fileID: 21300000, guid: 9163ddb249783e248914a2678462969d, type: 3}
+  - {fileID: 21300000, guid: c7f0515ed55c8204caacf51c0d5abe15, type: 3}
+  - {fileID: 21300000, guid: a72d658733d72b843b64886d55c2dfe9, type: 3}
+  - {fileID: 21300000, guid: 480baf23bf00e6549aea7c3479b21488, type: 3}
+  - {fileID: 21300000, guid: a8beb34270fe18f4a85b1b6f5e298f29, type: 3}
+  - {fileID: 21300000, guid: f1b3166167a27c74f9ea45445a336e9d, type: 3}
+  - {fileID: 21300000, guid: 37de27d1396c8d5408c902eedf5797dd, type: 3}
+  - {fileID: 21300000, guid: 6036b070377cabf4fa4d5a48514963db, type: 3}
+  - {fileID: 21300000, guid: aebb6aca281ec3b428a19021a7dd4fc9, type: 3}
   heroNames: []
   heroMonikers: []
   heroIcon: {fileID: 0}
