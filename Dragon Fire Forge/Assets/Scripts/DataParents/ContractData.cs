@@ -26,14 +26,16 @@ public class ContractData : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
-        string[] heroNames = { "Hador ", "Vintel ", "Di ", "Elforth ", "Rial ", "Morfra ", "Ike ", "Sygel ", "Brood ", "Corin ", "Eve ", "Lorel ", "Mook ", "Stain "};
-        string[] heroMonikers = { "The Brave", "The Bold", "The Reckless", "The Bloodthirsty", "The Bloody", "The Vagrant", "The Unstoppable", "The Unhinged", "The Faithful", "The Vengeful", "The Feared", "The Scavenger", "The Devilish" };
+        
     }
 
 
 
     public void createContract()
     {
+        string[] heroNames = { "Hador ", "Vintel ", "Di ", "Elforth ", "Rial ", "Morfra ", "Ike ", "Sygel ", "Brood ", "Corin ", "Eve ", "Lorel ", "Mook ", "Stain " };
+        string[] heroMonikers = { "The Brave", "The Bold", "The Reckless", "The Bloodthirsty", "The Bloody", "The Vagrant", "The Unstoppable", "The Unhinged", "The Faithful", "The Vengeful", "The Feared", "The Scavenger", "The Devilish" };
+
         heroIcon = heroIcons[Random.Range(0, heroIcons.Length - 1)];
         heroName = heroNames[Random.Range(0, heroNames.Length - 1)];
         moniker = heroMonikers[Random.Range(0, heroMonikers.Length - 1)];

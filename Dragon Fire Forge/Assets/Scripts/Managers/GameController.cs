@@ -90,6 +90,16 @@ public class GameController : MonoBehaviour
         ContractScreen.SetActive(true);
     }
 
+    public void closeContracts()
+    {
+        ContractScreen.SetActive(false);
+    }
+
+    public void contractSelect()
+    {
+        
+    }
+
     public void openMap()
     {
         MapScreen.SetActive(true);

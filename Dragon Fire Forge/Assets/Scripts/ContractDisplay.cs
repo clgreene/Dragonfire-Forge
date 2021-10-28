@@ -10,7 +10,6 @@ public class ContractDisplay : MonoBehaviour
 
     public GameObject heroImage;
     public Text chosenName;
-    public Text chosenTitle;
     public Text chosenEnemy;
     public Text chosenClass;
 
@@ -32,8 +31,7 @@ public class ContractDisplay : MonoBehaviour
         contract.createContract();
 
         heroImage.GetComponent<Image>().sprite = contract.heroIcon;
-        chosenName.text = contract.heroName;
-        chosenTitle.text = contract.moniker;
+        chosenName.text = contract.heroName + " " + contract.moniker;
 
         switch (contract.enemy)
         {
