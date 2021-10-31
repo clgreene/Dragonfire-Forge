@@ -187,6 +187,9 @@ public class GameController : MonoBehaviour
 
     public void displayWeapon()
     {
+
+        weaponInfo.calcWeaponScore();
+
         ForgeScreen.SetActive(false);
         ForgeGame.SetActive(false);
         blackScreen.SetActive(true);

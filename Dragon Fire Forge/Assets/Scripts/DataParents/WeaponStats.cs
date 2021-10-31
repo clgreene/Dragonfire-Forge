@@ -20,6 +20,33 @@ public class WeaponStats : ScriptableObject
     public int weaponScore;
     public int contractScore;
 
+    //weapon modifiers
+    int matMod;
+
+
+
+    public void calcWeaponScore()
+    {
+        switch (weaponMat)
+        {
+            case 0:
+                matMod = 40;
+                break;
+            case 1:
+                matMod = 25;
+                break;
+            case 2:
+                matMod = 10;
+                break;
+            case 3:
+                matMod = 0;
+                break;
+        }
+
+        weaponScore = ((smeltScore + forgeScore) / 2) - matMod;
+
+    }
+
 
     
 }

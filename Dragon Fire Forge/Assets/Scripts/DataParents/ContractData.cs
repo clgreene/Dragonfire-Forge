@@ -7,27 +7,21 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class ContractData : ScriptableObject
 {
-    
+    //random lists to draw from
     public Sprite[] heroIcons;
     public string[] heroNames;
     public string[] heroMonikers;
 
+    //contract info
     public Sprite heroIcon;
     public string heroName;
     public string moniker;
     public int race;
     public int enemy;
     public int heroClass;
+
     
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
 
 
@@ -43,15 +37,7 @@ public class ContractData : ScriptableObject
         enemy = Random.Range(0, 3);
         heroClass = Random.Range(0, 3);
 
-
-
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
