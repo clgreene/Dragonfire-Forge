@@ -147,6 +147,11 @@ public class GameController : MonoBehaviour
         MatChoices.SetActive(true);
     }
 
+    public void chooseWeapon()
+    {
+        WeaponSelection.SetActive(true);
+    }
+
     public void startContract()
     {
         Dialogue.SetActive(false);
