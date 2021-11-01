@@ -14,20 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringList:
   - Welcome to the Dragonfire Forge!
-  - The guild sent you to be my replacement, huh?
-  - Must be some serious forging skills you've got if they think you've got what
-    it takes to run this place.
+  - You've been sent here to take over the famous Dragonfire Forge
+  - The Forgers Guild must have a high opinion of you to assign you here.
   - The Dragonfire Forge is any adventurers last stop to gear up before taking on
     the evils of the Darklands.
-  - Because of that, the quality of our weapons directly contributes to keeping evil
-    out of our lands.
-  - If our weapons are trash, or if you only cater to certain adventurers, we'll
-    eventually get overrun.
-  - And after us, the entire kingdom.
+  - The weapons that are produced here directly contribute to keeping the evil armies
+    of the Darklands out of the free nations.
+  - If you weapons are sub-par, our kingdom will be over-run
   - That's why it's important that we provide the best gear for our clients, and
     why we should choose those clients carefully
-  - We're a little low on our stock right now, but lets see what you can do.
-  - Grab some steel and throw it in the forge.
-  - Once it's heating, you'll have to operate bellows from both sides to keep the
-    temperature up and the heat even.
-  - Whenever you're ready.
+  - It looks like you are a little low on stock, but lets see what you can do with
+    some steel.
+  - Go ahead and grab some steel and throw it in the forge.
+  - Whenever you're ready....

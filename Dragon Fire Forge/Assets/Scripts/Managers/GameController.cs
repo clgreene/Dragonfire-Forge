@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public GameObject ForgeGame;
     public GameObject SmeltGame;
     //public GameObject QuenchGame;
+    public GameObject shopScreen;
     public GameObject WeaponSelection;
     public GameObject PauseScreen;
     public WeaponStats weaponInfo;
@@ -117,7 +118,12 @@ public class GameController : MonoBehaviour
 
     public void openShop()
     {
+        shopScreen.SetActive(true);
+    }
 
+    public void closeShop()
+    {
+        shopScreen.SetActive(false);
     }
 
     public void NewGame()
@@ -149,6 +155,7 @@ public class GameController : MonoBehaviour
 
     public void chooseWeapon()
     {
+        ContractScreen.SetActive(false);
         WeaponSelection.SetActive(true);
     }
 

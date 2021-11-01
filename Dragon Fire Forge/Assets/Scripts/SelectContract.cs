@@ -31,7 +31,9 @@ public class SelectContract : MonoBehaviour
 
         contractHighlight.SetActive(true);
 
-        currentContract = selectedContract;
+        currentContract.race = selectedContract.race;
+        currentContract.heroClass = selectedContract.heroClass;
+        currentContract.enemy = selectedContract.enemy;
 
         acceptButton.SetActive(true);
     }
