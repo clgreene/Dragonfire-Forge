@@ -150,6 +150,7 @@ public class GameController : MonoBehaviour
     public void startContract()
     {
         Dialogue.SetActive(false);
+        WeaponSelection.SetActive(false);
         SmeltGame.SetActive(true);
         MatChoices.SetActive(false);
         startBellows.value = true;

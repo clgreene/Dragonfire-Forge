@@ -10,6 +10,16 @@ public class WeaponButton : MonoBehaviour
 
     public Button activated;
 
+    public int weaponType;
+
+    public WeaponStats weaponInfo;
+
+    public GameObject acceptButton;
+
+    public GameObject selected;
+
+    public GameObject[] selectionList;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +31,20 @@ public class WeaponButton : MonoBehaviour
     {
 
         if (purchased.value == true) activated.interactable = true;
+
+    }
+
+    public void selectWeapon()
+    {
+        for (int i = 0; i < selectionList.Length; i++)
+        {
+            selectionList[i].SetActive(false);
+        }
+
+        selected.SetActive(true);
+
+        weaponInfo.weaponType = weaponType;
+        acceptButton.SetActive(true);
 
     }
 }
