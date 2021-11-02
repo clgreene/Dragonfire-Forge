@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DialogueRunner : MonoBehaviour
 {
+
+    public StringData activeDialogue;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
