@@ -36,4 +36,5 @@ public class PlayerMovement : MonoBehaviour
 
         if (jumpData.boolValue == true) jumpData.intList[0] = 0;
     }
+
 }

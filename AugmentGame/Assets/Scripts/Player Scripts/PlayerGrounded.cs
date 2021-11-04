@@ -16,7 +16,6 @@ public class PlayerGrounded : MonoBehaviour
 
         }
 
-
     }
 
     //once Groundcheck collider has left the ground we set the GroundCheck to false until we are back on the ground.
@@ -25,6 +24,7 @@ public class PlayerGrounded : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             GC.boolValue = false;
+            GC.intList[0]++;
             Debug.Log("Weeee");
         }
     }
