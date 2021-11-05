@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed0186fcf61f8e45b278ebde2dd667c, type: 3}
+  m_Name: KradeIntro
+  m_EditorClassIdentifier: 
+  value: 
+  arrayValues: []
+  listValues:
+  - Eve, it's a pleasure to finally meet you.
+  - You're reputation is almost too good to be true.
+  - My name is Krade, and I have a job for you, if you're interested.
