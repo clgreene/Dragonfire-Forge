@@ -9,21 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae12169547dfdea4fb8b5a3d00f4e82a, type: 3}
-  m_Name: KradeInstance
+  m_Script: {fileID: 11500000, guid: 87ec7e0cda9e0a14497e27d5442cd40a, type: 3}
+  m_Name: EmoteInventory
   m_EditorClassIdentifier: 
-  random: 1
-  sentNumber: 0
-  sentence: I'm Krade, and I have a job for you.
-  sentences:
-  - Eve, you reputation precedes you.
-  - I'm Krade, and I have a job for you.
-  - Are you interested?
-  response: 0
-  end: 0
-  dialNumber: 0
-  dialogue: {fileID: 0}
-  dialogues: []
   yes: 0
   no: 0
   wave: 0
@@ -39,3 +27,18 @@ MonoBehaviour:
   salute: 0
   bringItOn: 0
   surrender: 0
+  yesInit: 0
+  noInit: 0
+  waveInit: 0
+  scoreInit: 0
+  thumbsUpInit: 0
+  shrugInit: 0
+  fuckOffInit: 0
+  watchingYouInit: 0
+  rockOutInit: 0
+  facePalmInit: 0
+  oopsInit: 0
+  pullHairInit: 0
+  saluteInit: 0
+  bringItOnInit: 0
+  surrenderInit: 0

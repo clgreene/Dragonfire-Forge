@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public BoolData movementPause;
     //condition[1] bool being true cancels movement abilities.
 
+    //emote data
+    public EmoteData emotes;
     public CollectedData jumpData;
     //jumpData.intList = jump count and jump max respectively
     //jumpData.boolValue = groundCheck
@@ -39,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         
 
         animator.SetFloat("Speed", RB.velocity.x);
+        animator.SetBool("interacting", movementPause.value);
+        animator.SetBool("wave", emotes.waveInit);
 
 
         if (movementPause.value == false)

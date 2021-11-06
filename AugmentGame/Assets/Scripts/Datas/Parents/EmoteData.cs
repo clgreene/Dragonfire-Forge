@@ -3,21 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class DialogueData : ScriptableObject
+public class EmoteData : ScriptableObject
 {
-    public bool random;
-
-    public int sentNumber;
-    public string sentence;
-    public List<string> sentences;
-
-    public bool response;
-    public bool end;
-
-    public int dialNumber;
-    public DialogueData dialogue;
-    public List<DialogueData> dialogues;
-
 
     public bool yes;
     public bool no;
@@ -36,20 +23,26 @@ public class DialogueData : ScriptableObject
     public bool surrender;
 
 
-
-    public void initializeDictionary()
-    {
-        
-    }
-
-
-
-
+    public bool yesInit;
+    public bool noInit;
+    public bool waveInit;
+    public bool scoreInit;
+    public bool thumbsUpInit;
+    public bool shrugInit;
+    public bool fuckOffInit;
+    public bool watchingYouInit;
+    public bool rockOutInit;
+    public bool facePalmInit;
+    public bool oopsInit;
+    public bool pullHairInit;
+    public bool saluteInit;
+    public bool bringItOnInit;
+    public bool surrenderInit;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

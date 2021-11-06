@@ -36,7 +36,13 @@ public class DialogueTrigger : MonoBehaviour
         Vector2 screenPosition = cam.WorldToScreenPoint(speechBubble.transform.position);
         displayedDialogue.transform.position = screenPosition;
         //set dialogue to first sentence and display it on screen
-        charDialogue.sentNumber = 0;
+        if(charDialogue.random == true)
+        {
+            charDialogue.sentNumber = Random.Range(0, charDialogue.sentences.Count);
+            instance.ended = true;
+        }
+        else charDialogue.sentNumber = 0;
+
         charDialogue.sentence = charDialogue.sentences[charDialogue.sentNumber];
         displayedDialogue.text = charDialogue.sentence;
 
@@ -57,7 +63,10 @@ public class DialogueTrigger : MonoBehaviour
     public void endDialogue()
     {
         //endDialogue needs a unity event system for different outcomes, i.e. if you must respond, or certain changes happen because of the dialogue, or the characters next dialogue string they give you should change.
-
+        if(charDialogue.response == true)
+        {
+            response();
+        }
 
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
@@ -69,7 +78,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
-        //ask for a response function
+        //ask for a response function from character response script
+        //character response script will compare unlocked emotes against current dialogue accepted emote to display what responses are allowed
+        //response list number will change a response int, which dialogue data will compare and select the appropriate npc continuation
+
     }
 
     public void finishDialogue()
