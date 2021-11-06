@@ -18,5 +18,11 @@ public class CollectedData : ScriptableObject
     public string stringValue;
     public List<string> stringList;
 
+    public Vector2 transformData;
+    public List<Vector2> transformList;
+
+    public CollectedData colData;
+    public List<CollectedData> colDataList;
+
 
 }

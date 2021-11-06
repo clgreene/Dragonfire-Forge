@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     Animator animator;
 
-    public CollectedData interactConditions;
+    public BoolData movementPause;
     //condition[1] bool being true cancels movement abilities.
 
     public CollectedData jumpData;
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         triggerRight = interactTrigger.offset;
         triggerLeft.y = triggerRight.y;
         triggerLeft.x = -triggerRight.x;
-        interactConditions.boolList[1] = false;
+        movementPause.value = false;
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", RB.velocity.x);
 
 
-        if (interactConditions.boolList[1] == false)
+        if (movementPause.value == false)
         {
             if (Input.GetKey(KeyCode.D) && RB.velocity.x < 0.6f)
             {
