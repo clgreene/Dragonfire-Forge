@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.Events;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public CollectedData charDialogue;
+    public DialogueData charDialogue;
     public InteractObject instance;
 
     Text displayedDialogue;
@@ -35,19 +36,19 @@ public class DialogueTrigger : MonoBehaviour
         Vector2 screenPosition = cam.WorldToScreenPoint(speechBubble.transform.position);
         displayedDialogue.transform.position = screenPosition;
         //set dialogue to first sentence and display it on screen
-        charDialogue.intValue = 0;
-        charDialogue.stringValue = charDialogue.stringList[charDialogue.intValue];
-        displayedDialogue.text = charDialogue.stringValue;
+        charDialogue.sentNumber = 0;
+        charDialogue.sentence = charDialogue.sentences[charDialogue.sentNumber];
+        displayedDialogue.text = charDialogue.sentence;
 
     }
 
     public void cycleDialogue()
     {
-        charDialogue.intValue++;
-        charDialogue.stringValue = charDialogue.stringList[charDialogue.intValue];
-        displayedDialogue.text = charDialogue.stringValue;
+        charDialogue.sentNumber++;
+        charDialogue.sentence = charDialogue.sentences[charDialogue.sentNumber];
+        displayedDialogue.text = charDialogue.sentence;
 
-        if(charDialogue.intValue == charDialogue.stringList.Count - 1)
+        if(charDialogue.sentNumber == charDialogue.sentences.Count - 1)
         {
             instance.ended = true;
         }
@@ -57,10 +58,24 @@ public class DialogueTrigger : MonoBehaviour
     {
         //endDialogue needs a unity event system for different outcomes, i.e. if you must respond, or certain changes happen because of the dialogue, or the characters next dialogue string they give you should change.
 
+
+        speechBubble.SetActive(false);
+        displayedDialogue.text = null;
+        charDialogue.sentNumber = 0;
+        movementPause.value = false;
+    }
+
+    public void response()
+    {
+        speechBubble.SetActive(false);
+        displayedDialogue.text = null;
+        //ask for a response function
+    }
+
+    public void finishDialogue()
+    {
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
         movementPause.value = false;
     }
-
-
 }

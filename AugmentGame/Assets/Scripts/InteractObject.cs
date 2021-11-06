@@ -52,6 +52,8 @@ public class InteractObject : MonoBehaviour
             {
                 interactEnd.Invoke();
                 interactIcon.SetActive(true);
+                ended = false;
+                started = false;
             }
 
             else
