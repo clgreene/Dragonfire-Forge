@@ -209,7 +209,6 @@ public class GameController : MonoBehaviour
         WeaponDisplay.SetActive(true);
         weaponDisplay.displayWeapon();
 
-        //update day counter
         //update enemy map based on contract and weapon score
 
 
@@ -235,6 +234,7 @@ public class GameController : MonoBehaviour
         weaponDisplay.tutorialHideBox.SetActive(false);
         Dialogue.SetActive(true);
         Destroy(weaponDisplay.weapon);
+        tutorialActive.value = false;
 
     }
 

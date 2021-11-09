@@ -246,6 +246,100 @@ public class ForgeGameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         overlay.text = "";
         GC.displayWeapon();
+
+        firstLine = true;
+
+
+        for(int i = 0; i < 19; i++)
+        {
+            //updating the current and previous lines
+            switch (i)
+            {
+                case 0:
+                    currentLine = lineOne;
+                    break;
+                case 1:
+                    currentLine = lineTwo;
+                    previousLine = lineOne;
+                    break;
+                case 2:
+                    currentLine = lineThree;
+                    previousLine = lineTwo;
+                    break;
+                case 3:
+                    currentLine = lineFour;
+                    previousLine = lineThree;
+                    break;
+                case 4:
+                    currentLine = lineFive;
+                    previousLine = lineFour;
+                    break;
+                case 5:
+                    currentLine = lineSix;
+                    previousLine = lineFive;
+                    break;
+                case 6:
+                    currentLine = lineSeven;
+                    previousLine = lineSix;
+                    break;
+                case 7:
+                    currentLine = lineEight;
+                    previousLine = lineSeven;
+                    break;
+                case 8:
+                    currentLine = lineNine;
+                    previousLine = lineEight;
+                    break;
+                case 9:
+                    currentLine = lineTen;
+                    previousLine = lineNine;
+                    break;
+                case 10:
+                    currentLine = lineEleven;
+                    previousLine = lineTen;
+                    break;
+                case 11:
+                    currentLine = lineTwelve;
+                    previousLine = lineEleven;
+                    break;
+                case 12:
+                    currentLine = lineThirteen;
+                    previousLine = lineTwelve;
+                    break;
+                case 13:
+                    currentLine = lineFourteen;
+                    previousLine = lineThirteen;
+                    break;
+                case 14:
+                    currentLine = lineFifteen;
+                    previousLine = lineFourteen;
+                    break;
+                case 15:
+                    currentLine = lineSixteen;
+                    previousLine = lineFifteen;
+                    break;
+                case 16:
+                    currentLine = lineSeventeen;
+                    previousLine = lineSixteen;
+                    break;
+                case 17:
+                    currentLine = lineEighteen;
+                    previousLine = lineSeventeen;
+                    break;
+                case 18:
+                    currentLine = lineNineteen;
+                    previousLine = lineEighteen;
+                    break;
+
+            }
+            for (int l = 0; l < 25; l++)
+            {
+                currentLine[l].SetActive(false);
+            }
+
+
+        }
+
     }
 
 
