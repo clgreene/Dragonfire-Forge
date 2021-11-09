@@ -252,7 +252,7 @@ public class ForgeGameManager : MonoBehaviour
 
         for(int i = 0; i < 19; i++)
         {
-            //updating the current and previous lines
+            
             switch (i)
             {
                 case 0:

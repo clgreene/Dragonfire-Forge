@@ -217,6 +217,7 @@ public class GameController : MonoBehaviour
     public void newDay()
     {
         Dialogue.SetActive(false);
+        TutorialOption.SetActive(false);
         day++;
         ForgeBanner.SetActive(true);
         ForgeButtons.SetActive(true);
