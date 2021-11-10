@@ -55,7 +55,10 @@ public class ForgeGameManager : MonoBehaviour
     public GameController GC;
 
     public Text overlay;
-    
+
+    public ContractData currentContract;
+
+    public WeaponStats currentWeapon;
 
 
     // Start is called before the first frame update
@@ -242,6 +245,7 @@ public class ForgeGameManager : MonoBehaviour
         GC.ForgeGame.SetActive(false);
         int score = (int)(succesfulAmount * 100 / GC.weaponInfo.weaponEdgeVolume);
         GC.weaponInfo.forgeScore = score;
+        currentWeapon.forgeScore = score;
         overlay.text = score.ToString() + "%";
         yield return new WaitForSeconds(2f);
         overlay.text = "";

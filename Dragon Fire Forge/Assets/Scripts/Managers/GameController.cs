@@ -59,6 +59,18 @@ public class GameController : MonoBehaviour
     public ContractDisplay contractThree;
     public ContractData currentContract;
 
+    //map elements
+    public GameObject orcMapIcon;
+    public GameObject elfMapIcon;
+    public GameObject deadMapIcon;
+    public GameObject arachnidMapIcon;
+    public GameObject[] enemyIcons;
+    public Transform orcPos;
+    public Transform elfPos;
+    public Transform deadPos;
+    public Transform arachnidPos;
+    public Transform[] enemyPos;
+
 
     public BoolData forgePlaying;
     public BoolData tutorialActive;
@@ -156,6 +168,8 @@ public class GameController : MonoBehaviour
     public void chooseWeapon()
     {
         ContractScreen.SetActive(false);
+        ForgeButtons.SetActive(false);
+        ForgeBanner.SetActive(false);
         WeaponSelection.SetActive(true);
     }
 
@@ -202,16 +216,42 @@ public class GameController : MonoBehaviour
     {
 
         weaponInfo.calcWeaponScore();
-
+        weaponInfo.contractScore = weaponInfo.weaponScore;
+        updateMap();
         ForgeScreen.SetActive(false);
         ForgeGame.SetActive(false);
         blackScreen.SetActive(true);
         WeaponDisplay.SetActive(true);
         weaponDisplay.displayWeapon();
 
+
         //update enemy map based on contract and weapon score
 
 
+    }
+
+    public void calcContractScore()
+    {
+
+    }
+
+    public void updateMap()
+    {
+        int enemies = Random.Range(0, 3);
+
+        for(int i = 0; i <= enemies; i++)
+        {
+            enemyIcons[Random.Range(0, 3)].transform.Translate(0, -25, 0, Space.Self);
+        }
+
+        float pushed = weaponInfo.contractScore;
+
+        enemyIcons[currentContract.enemy].transform.Translate(0, pushed, 0, Space.Self);
+
+        for(int i = 0; i < 4; i++)
+        {
+            if (enemyIcons[i].transform.position.y > 125) enemyIcons[i].transform.position = enemyPos[i].position;
+        }
     }
 
     public void newDay()
@@ -219,6 +259,9 @@ public class GameController : MonoBehaviour
         Dialogue.SetActive(false);
         TutorialOption.SetActive(false);
         day++;
+        Destroy(weaponDisplay.weapon);
+        blackScreen.SetActive(false);
+        WeaponDisplay.SetActive(false);
         ForgeBanner.SetActive(true);
         ForgeButtons.SetActive(true);
         contractOne.generateContract();

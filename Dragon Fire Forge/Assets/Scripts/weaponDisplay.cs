@@ -130,10 +130,10 @@ public class weaponDisplay : MonoBehaviour
             if (weaponStats.weaponScore > 90) fiveStarWeapon.SetActive(true);
 
             if (weaponStats.contractScore > 10) oneStarContract.SetActive(true);
-            if (weaponStats.contractScore > 10) twoStarContract.SetActive(true);
-            if (weaponStats.contractScore > 10) threeStarContract.SetActive(true);
-            if (weaponStats.contractScore > 10) fourStarContract.SetActive(true);
-            if (weaponStats.contractScore > 10) fiveStarContract.SetActive(true);
+            if (weaponStats.contractScore > 30) twoStarContract.SetActive(true);
+            if (weaponStats.contractScore > 50) threeStarContract.SetActive(true);
+            if (weaponStats.contractScore > 70) fourStarContract.SetActive(true);
+            if (weaponStats.contractScore > 90) fiveStarContract.SetActive(true);
 
             //reward money based on contract score * weapon mat modifier
 

@@ -90,7 +90,7 @@ public class BellowsGame : MonoBehaviour
         start.value = false;
         arrowPositions.positionValue.Clear();
         arrowPositions.boolValue.Clear();
-        randomInt = Random.Range(0, arrowGames.Length - 1);
+        randomInt = Random.Range(0, arrowGames.Length);
         StartCoroutine(countDown());
         yield return new WaitForSeconds(3f);
         currentGame = Instantiate(arrowGames[randomInt]);
