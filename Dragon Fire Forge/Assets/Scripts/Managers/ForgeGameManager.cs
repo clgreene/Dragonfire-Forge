@@ -243,6 +243,7 @@ public class ForgeGameManager : MonoBehaviour
     public IEnumerator displayScore()
     {
         GC.ForgeGame.SetActive(false);
+        lineNumber.value = 0;
         int score = (int)(succesfulAmount * 100 / GC.weaponInfo.weaponEdgeVolume);
         GC.weaponInfo.forgeScore = score;
         currentWeapon.forgeScore = score;
