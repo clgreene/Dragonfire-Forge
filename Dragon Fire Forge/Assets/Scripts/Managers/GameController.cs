@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
     public GameObject TutorialOption;
     public GameObject MatChoices;
     public GameObject MapScreen;
+    public GameObject gameOverScreen;
 
 
     //forge elements
@@ -60,15 +61,7 @@ public class GameController : MonoBehaviour
     public ContractData currentContract;
 
     //map elements
-    public GameObject orcMapIcon;
-    public GameObject elfMapIcon;
-    public GameObject deadMapIcon;
-    public GameObject arachnidMapIcon;
     public GameObject[] enemyIcons;
-    public Transform orcPos;
-    public Transform elfPos;
-    public Transform deadPos;
-    public Transform arachnidPos;
     public Transform[] enemyPos;
 
 
@@ -252,6 +245,11 @@ public class GameController : MonoBehaviour
         {
             if (enemyIcons[i].transform.position.y > 125) enemyIcons[i].transform.position = enemyPos[i].position;
         }
+
+        for(int i = 0; i < 4; i++)
+        {
+            if (enemyIcons[i].transform.position.y < -60) gameEnd();
+        }
     }
 
     public void newDay()
@@ -287,5 +285,11 @@ public class GameController : MonoBehaviour
         TutorialOption.SetActive(false);
         newDay();
         //ForgeScreen.SetActive(true);
+    }
+
+    public void gameEnd()
+    {
+        blackScreen.SetActive(true);
+        gameOverScreen.SetActive(true);
     }
 }
