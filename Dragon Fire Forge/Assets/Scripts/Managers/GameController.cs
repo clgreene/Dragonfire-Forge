@@ -155,6 +155,7 @@ public class GameController : MonoBehaviour
     public void chooseMat()
     {
         Dialogue.SetActive(false);
+        WeaponSelection.SetActive(false);
         MatChoices.SetActive(true);
     }
 
