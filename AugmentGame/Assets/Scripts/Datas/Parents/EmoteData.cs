@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EmoteData : ScriptableObject
 {
-
+    //inventory status of emote
     public bool yes;
     public bool no;
     public bool wave;
@@ -22,7 +22,7 @@ public class EmoteData : ScriptableObject
     public bool bringItOn;
     public bool surrender;
 
-
+    //emote started bool status
     public bool yesInit;
     public bool noInit;
     public bool waveInit;
