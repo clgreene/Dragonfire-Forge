@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
     //bellows elements
     public BoolData startBellows;
     public IntData weaponMat;
+    public GameObject bellowsIcon;
 
     //inventory texts
     public inventoryData inv;
@@ -173,6 +174,7 @@ public class GameController : MonoBehaviour
         WeaponSelection.SetActive(false);
         SmeltGame.SetActive(true);
         MatChoices.SetActive(false);
+        bellowsIcon.SetActive(true);
         startBellows.value = true;
 
     }
@@ -200,6 +202,7 @@ public class GameController : MonoBehaviour
 
         }
 
+        bellowsIcon.SetActive(false);
         ForgeScreen.SetActive(true);
         SmeltGame.SetActive(false);
         ForgeGame.SetActive(true);
@@ -244,12 +247,12 @@ public class GameController : MonoBehaviour
 
         for(int i = 0; i < 4; i++)
         {
-            if (enemyIcons[i].transform.position.y > 125) enemyIcons[i].transform.position = enemyPos[i].position;
+            if (enemyIcons[i].transform.position.y > 284) enemyIcons[i].transform.position = enemyPos[i].position;
         }
 
         for(int i = 0; i < 4; i++)
         {
-            if (enemyIcons[i].transform.position.y < -60) gameEnd();
+            if (enemyIcons[i].transform.position.y < -175) gameEnd();
         }
     }
 
