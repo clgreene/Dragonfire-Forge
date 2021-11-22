@@ -43,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", RB.velocity.x);
         animator.SetBool("interacting", movementPause.value);
         animator.SetBool("wave", emotes.waveInit);
+        animator.SetBool("shrug", emotes.shrugInit);
+        animator.SetBool("gun", emotes.gunHeld);
+        
 
 
         if (movementPause.value == false)
@@ -51,11 +54,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 RB.AddForce(transform.right * moveSpeed * Time.deltaTime); // walk right
                 interactTrigger.offset = triggerRight;
+                animator.SetBool("facingRight", true);
             }
             if (Input.GetKey(KeyCode.A) && RB.velocity.x > -0.6f)
             {
                 RB.AddForce(transform.right * -moveSpeed * Time.deltaTime); // walk left
                 interactTrigger.offset = triggerLeft;
+                animator.SetBool("facingRight", false);
             }
 
 
@@ -68,6 +73,13 @@ public class PlayerMovement : MonoBehaviour
 
             if (jumpData.boolValue == true) jumpData.intList[0] = 0;
         }
+
+
+        
+    }
+
+    void shrug()
+    {
         
     }
 

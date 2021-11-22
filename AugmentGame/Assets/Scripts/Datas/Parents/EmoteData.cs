@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EmoteData : ScriptableObject
 {
+    public bool gunHeld;
+    public bool gunFired;
+
     //inventory status of emote
     public bool yes;
     public bool no;

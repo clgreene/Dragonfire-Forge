@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ec7e0cda9e0a14497e27d5442cd40a, type: 3}
   m_Name: EmoteInventory
   m_EditorClassIdentifier: 
+  gunHeld: 1
+  gunFired: 0
   yes: 0
   no: 0
   wave: 0
