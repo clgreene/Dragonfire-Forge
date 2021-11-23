@@ -6,11 +6,12 @@ public class EmoteManager : MonoBehaviour
 {
 
     public EmoteData emotes;
-    Animator animator;
+    public Animator animator;
 
     public void wave()
     {
         emotes.waveInit = true;
+        animator.Play("Emote");
     }
 
     public void score()

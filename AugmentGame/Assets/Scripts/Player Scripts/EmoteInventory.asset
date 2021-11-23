@@ -31,7 +31,7 @@ MonoBehaviour:
   surrender: 0
   yesInit: 0
   noInit: 0
-  waveInit: 0
+  waveInit: 1
   scoreInit: 0
   thumbsUpInit: 0
   shrugInit: 0
