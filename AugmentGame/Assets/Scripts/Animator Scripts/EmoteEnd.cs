@@ -26,7 +26,8 @@ public class EmoteEnd : StateMachineBehaviour
         emotes.bringItOnInit = false;
         emotes.surrenderInit = false;
 
-        animator.Play("returnToOrigin");
+        if (emotes.gunHeld == true) animator.Play("equipGun");
+        else animator.Play("returnToOrigin");
         
     }
 
@@ -37,28 +38,12 @@ public class EmoteEnd : StateMachineBehaviour
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+/*    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        emotes.yesInit = false;
-        emotes.noInit = false;
-        emotes.waveInit = false;
-        emotes.scoreInit = false;
-        emotes.thumbsUpInit = false;
-        emotes.shrugInit = false;
-        emotes.fuckOffInit = false;
-        emotes.watchingYouInit = false;
-        emotes.rockOutInit = false;
-        emotes.facePalmInit = false;
-        emotes.oopsInit = false;
-        emotes.pullHairInit = false;
-        emotes.saluteInit = false;
-        emotes.bringItOnInit = false;
-        emotes.surrenderInit = false;
-
 
 
     }
-
+*/
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{

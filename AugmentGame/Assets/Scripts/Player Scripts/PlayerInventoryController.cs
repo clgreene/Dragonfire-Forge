@@ -26,8 +26,13 @@ public class PlayerInventoryController : MonoBehaviour
 
         inventorySelection[activeItem.value].interactable = true;
 
+        activeInv.setInventory();
+
         for (int i = 0; i < 8; i++)
         {
+            inventoryImages[i].sprite = activeInv.activeInventory[i].icon;
+            
+
             if (i != activeItem.value)
             {
                 inventorySelection[i].interactable = false;
