@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     //jumpData.boolValue = groundCheck
 
     public GameObject emoteMenu;
+    GameObject newEmote;
+    public BoolData emoteSelectionOn;
 
     // Start is called before the first frame update
     void Start()
@@ -80,12 +82,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             movementPause.value = true;
+            emoteSelectionOn.value = true;
 
-            
+            Vector3 mousePos = Camera.current.ScreenToWorldPoint(Input.mousePosition);
+
+            newEmote = Instantiate(emoteMenu, mousePos, Quaternion.identity);
 
         }
 
-        if (Input.GetKeyUp(KeyCode.E)) movementPause.value = false;
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            if (newEmote != null) Destroy(newEmote);
+            movementPause.value = false;
+
+        }
+
 
         
     }
