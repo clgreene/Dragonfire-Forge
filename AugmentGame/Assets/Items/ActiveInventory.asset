@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeInventory:
   - {fileID: 11400000, guid: 2ba5de7c7eae2c644b149721eab35804, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
+  - {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
+  - {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
+  - {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
+  - {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
+  - {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
+  - {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
+  emptyItem: {fileID: 11400000, guid: 6ce0b03fe3bb2224b96ff045e2703110, type: 2}
