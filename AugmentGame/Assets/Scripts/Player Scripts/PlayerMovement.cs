@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     //jumpData.intList = jump count and jump max respectively
     //jumpData.boolValue = groundCheck
 
+    public GameObject emoteMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("gun", emotes.gunHeld);
         
 
-
+        //wasd player input for movement
         if (movementPause.value == false)
         {
             if (Input.GetKey(KeyCode.D) && RB.velocity.x < 0.6f)
@@ -74,13 +76,19 @@ public class PlayerMovement : MonoBehaviour
             if (jumpData.boolValue == true) jumpData.intList[0] = 0;
         }
 
+        //emote menu popup
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            movementPause.value = true;
+
+            
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.E)) movementPause.value = false;
 
         
     }
 
-    void shrug()
-    {
-        
-    }
 
 }

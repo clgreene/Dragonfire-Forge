@@ -41,23 +41,23 @@ public class PlayerInventoryController : MonoBehaviour
 
         if (activeInv.activeInventory[activeItem.value] == null)
         {
-            if (gunHeld == true)
+            if (emotes.gunHeld == true)
             {
                 animationCont.returnToOrigin();
-                gunHeld = false;
+                emotes.gunHeld = false;
             }
         }
         else if (activeInv.activeInventory[activeItem.value].isGun == true)
         {
             animationCont.equipGun();
-            gunHeld = true;
+            emotes.gunHeld = true;
         }
         else
         {
             if (gunHeld == true)
             {
                 animationCont.returnToOrigin();
-                gunHeld = false;
+                emotes.gunHeld = false;
             }
         }
     }
@@ -84,23 +84,23 @@ public class PlayerInventoryController : MonoBehaviour
 
             if (activeInv.activeInventory[activeItem.value] == null)
             {
-                if (gunHeld == true)
+                if (emotes.gunHeld == true)
                 {
                     animationCont.returnToOrigin();
-                    gunHeld = false;
+                    emotes.gunHeld = false;
                 }
             }
             else if (activeInv.activeInventory[activeItem.value].isGun == true)
             {
                 animationCont.equipGun();
-                gunHeld = true;
+                emotes.gunHeld = true;
             }
             else
             {
-                if (gunHeld == true)
+                if (emotes.gunHeld == true)
                 {
                     animationCont.returnToOrigin();
-                    gunHeld = false;
+                    emotes.gunHeld = false;
                 }
             }
 
@@ -122,23 +122,23 @@ public class PlayerInventoryController : MonoBehaviour
 
             if (activeInv.activeInventory[activeItem.value] == null)
             {
-                if (gunHeld == true)
+                if (emotes.gunHeld == true)
                 {
                     animationCont.returnToOrigin();
-                    gunHeld = false;
+                    emotes.gunHeld = false;
                 }
             }
             else if (activeInv.activeInventory[activeItem.value].isGun == true)
             {
                 animationCont.equipGun();
-                gunHeld = true;
+                emotes.gunHeld = true;
             }
             else
             {
-                if (gunHeld == true)
+                if (emotes.gunHeld == true)
                 {
                     animationCont.returnToOrigin();
-                    gunHeld = false;
+                    emotes.gunHeld = false;
                 }
             }
 
