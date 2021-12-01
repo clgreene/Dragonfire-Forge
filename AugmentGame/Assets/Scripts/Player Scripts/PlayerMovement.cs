@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject emoteMenu;
     GameObject newEmote;
     public BoolData emoteSelectionOn;
+    public IntData emoteWheelInt;
+    public Transform uiCanvas;
+    public Vector3 mousePos;
 
     // Start is called before the first frame update
     void Start()
@@ -83,16 +86,39 @@ public class PlayerMovement : MonoBehaviour
         {
             movementPause.value = true;
             emoteSelectionOn.value = true;
+            emoteWheelInt.value = 0;
 
-            Vector3 mousePos = Camera.current.ScreenToWorldPoint(Input.mousePosition);
+            mousePos = Input.mousePosition;
 
-            newEmote = Instantiate(emoteMenu, mousePos, Quaternion.identity);
+            newEmote = Instantiate(emoteMenu, transform.position, Quaternion.identity);
+            
+            newEmote.transform.SetParent(uiCanvas);
+            newEmote.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            newEmote.transform.position = mousePos;
 
+            newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+
+        }
+
+        if (emoteSelectionOn.value == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                emoteWheelInt.value = 0;
+                newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                emoteWheelInt.value = 1;
+                newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.E))
         {
-            if (newEmote != null) Destroy(newEmote);
+            if(newEmote != null) Destroy(newEmote);
+            emoteSelectionOn.value = false;
             movementPause.value = false;
 
         }

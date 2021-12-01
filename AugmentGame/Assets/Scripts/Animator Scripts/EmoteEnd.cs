@@ -21,7 +21,7 @@ public class EmoteEnd : StateMachineBehaviour
         emotes.rockOutInit = false;
         emotes.facePalmInit = false;
         emotes.oopsInit = false;
-        emotes.pullHairInit = false;
+        emotes.hairPullInit = false;
         emotes.saluteInit = false;
         emotes.bringItOnInit = false;
         emotes.surrenderInit = false;

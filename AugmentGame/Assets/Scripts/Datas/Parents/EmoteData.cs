@@ -24,6 +24,7 @@ public class EmoteData : ScriptableObject
     public bool salute;
     public bool bringItOn;
     public bool surrender;
+    public bool smoke;
 
     //emote started bool status
     public bool yesInit;
@@ -37,10 +38,11 @@ public class EmoteData : ScriptableObject
     public bool rockOutInit;
     public bool facePalmInit;
     public bool oopsInit;
-    public bool pullHairInit;
+    public bool hairPullInit;
     public bool saluteInit;
     public bool bringItOnInit;
     public bool surrenderInit;
+    public bool smokeInit;
 
     // Start is called before the first frame update
     void Start()
