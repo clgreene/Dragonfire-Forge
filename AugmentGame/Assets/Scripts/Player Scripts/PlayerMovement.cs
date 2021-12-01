@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", RB.velocity.x);
         animator.SetBool("interacting", movementPause.value);
-        animator.SetBool("wave", emotes.waveInit);
         animator.SetBool("shrug", emotes.shrugInit);
         animator.SetBool("gun", emotes.gunHeld);
         
@@ -115,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) || emoteSelectionOn.value == false)
         {
             if(newEmote != null) Destroy(newEmote);
             emoteSelectionOn.value = false;

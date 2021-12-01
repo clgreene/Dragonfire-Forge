@@ -25,6 +25,7 @@ public class EmoteEnd : StateMachineBehaviour
         emotes.saluteInit = false;
         emotes.bringItOnInit = false;
         emotes.surrenderInit = false;
+        emotes.smokeInit = false;
 
         if (emotes.gunHeld == true) animator.Play("equipGun");
         else animator.Play("returnToOrigin");
