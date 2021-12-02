@@ -27,6 +27,8 @@ public class EmoteData : ScriptableObject
     public bool smoke;
 
     //emote started bool status
+    public bool emoteInitialized;
+
     public bool yesInit;
     public bool noInit;
     public bool waveInit;

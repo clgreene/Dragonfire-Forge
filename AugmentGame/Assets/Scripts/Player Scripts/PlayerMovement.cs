@@ -114,11 +114,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.E) || emoteSelectionOn.value == false)
+        if (Input.GetKeyUp(KeyCode.E) || emotes.emoteInitialized == true)
         {
             if(newEmote != null) Destroy(newEmote);
             emoteSelectionOn.value = false;
             movementPause.value = false;
+            emotes.emoteInitialized = false;
+            Debug.Log("shouldn't be running");
 
         }
 

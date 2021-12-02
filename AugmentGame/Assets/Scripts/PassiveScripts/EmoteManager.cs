@@ -26,14 +26,15 @@ public class EmoteManager : MonoBehaviour
         animator.SetBool("surrender", emotes.surrenderInit);
         animator.SetBool("smoke", emotes.smokeInit);
         animator.SetBool("oops", emotes.oopsInit);
-        //animator.SetBool("wave", emotes.waveInit);
-        //animator.SetBool("wave", emotes.waveInit);
-        //animator.SetBool("wave", emotes.waveInit);
-        //animator.SetBool("wave", emotes.waveInit);
-        //animator.SetBool("wave", emotes.waveInit);
-        //animator.SetBool("wave", emotes.waveInit);
-        //animator.SetBool("wave", emotes.waveInit);
-        //animator.SetBool("wave", emotes.waveInit);
+        animator.SetBool("fuckYou", emotes.fuckOffInit);
+        animator.SetBool("comeHere", emotes.bringItOnInit);
+        animator.SetBool("facePalm", emotes.facePalmInit);
+        animator.SetBool("no", emotes.noInit);
+        animator.SetBool("yes", emotes.yesInit);
+        animator.SetBool("salute", emotes.saluteInit);
+        animator.SetBool("score", emotes.scoreInit);
+        animator.SetBool("thumbsUp", emotes.thumbsUpInit);
+        animator.SetBool("rockOut", emotes.rockOutInit);
 
     }
 
@@ -178,6 +179,7 @@ public class EmoteManager : MonoBehaviour
     public void wave()
     {
         emotes.waveInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
 
     }
@@ -185,90 +187,105 @@ public class EmoteManager : MonoBehaviour
     public void score()
     {
         emotes.scoreInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void thumbsUp()
     {
         emotes.thumbsUpInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void shrug()
     {
         emotes.shrugInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void fuckOff()
     {
         emotes.fuckOffInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void watchingYou()
     {
         emotes.watchingYouInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void rockOut()
     {
         emotes.rockOutInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void facePalm()
     {
         emotes.facePalmInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void oops()
     {
         emotes.oopsInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void pullHair()
     {
         emotes.hairPullInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void salute()
     {
         emotes.saluteInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void bringItOn()
     {
         emotes.bringItOnInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void surrender()
     {
         emotes.surrenderInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void smoke()
     {
         emotes.smokeInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void no()
     {
         emotes.noInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 
     public void yes()
     {
         emotes.yesInit = true;
+        emotes.emoteInitialized = true;
         animator.Play("Emote");
     }
 

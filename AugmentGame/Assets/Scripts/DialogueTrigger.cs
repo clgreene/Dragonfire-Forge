@@ -30,6 +30,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         //hault player
         movementPause.value = true;
+        Debug.Log("PlayerStopped");
         //display speech bubble
         speechBubble.SetActive(true);
         //set UI dialogue text on top of speech bubble
@@ -72,6 +73,7 @@ public class DialogueTrigger : MonoBehaviour
         displayedDialogue.text = null;
         charDialogue.sentNumber = 0;
         movementPause.value = false;
+        Debug.Log("PlayerMoving");
     }
 
     public void response()
