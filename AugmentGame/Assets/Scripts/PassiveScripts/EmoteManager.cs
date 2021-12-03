@@ -43,6 +43,7 @@ public class EmoteManager : MonoBehaviour
     {
         switch (emoteWheelInt.value)
         {
+
             case 0:
                 wave();
                 emoteSelectionOn.value = false;
