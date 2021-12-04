@@ -60,13 +60,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 RB.AddForce(transform.right * moveSpeed * Time.deltaTime); // walk right
                 interactTrigger.offset = triggerRight;
-                animator.SetBool("facingRight", true);
+                emotes.right = true;
+                animator.SetBool("facingRight", emotes.right);
             }
             if (Input.GetKey(KeyCode.A) && RB.velocity.x > -0.6f)
             {
                 RB.AddForce(transform.right * -moveSpeed * Time.deltaTime); // walk left
                 interactTrigger.offset = triggerLeft;
-                animator.SetBool("facingRight", false);
+                emotes.right = false;
+                animator.SetBool("facingRight", emotes.right);
             }
 
 
@@ -118,8 +120,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if(newEmote != null) Destroy(newEmote);
             emoteSelectionOn.value = false;
-            movementPause.value = false;
-            emotes.emoteInitialized = false;
+            if (emotes.emoteInitialized == true) movementPause.value = true;
+            else movementPause.value = false;
             Debug.Log("shouldn't be running");
 
         }

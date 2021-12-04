@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   random: 1
   sentNumber: 0
-  sentence: I'm Krade, and I have a job for you.
+  sentence: Eve, you reputation precedes you.
   sentences:
   - Eve, you reputation precedes you.
   - I'm Krade, and I have a job for you.

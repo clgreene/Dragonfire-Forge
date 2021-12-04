@@ -8,6 +8,9 @@ public class EmoteData : ScriptableObject
     public bool gunHeld;
     public bool gunFired;
 
+    //facing direction bools
+    public bool right;
+
     //inventory status of emote
     public bool yes;
     public bool no;

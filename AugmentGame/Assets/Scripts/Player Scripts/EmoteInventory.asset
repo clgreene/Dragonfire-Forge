@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ec7e0cda9e0a14497e27d5442cd40a, type: 3}
   m_Name: EmoteInventory
   m_EditorClassIdentifier: 
-  gunHeld: 1
+  gunHeld: 0
   gunFired: 0
+  right: 0
   yes: 0
   no: 0
   wave: 0
@@ -29,9 +30,11 @@ MonoBehaviour:
   salute: 0
   bringItOn: 0
   surrender: 0
+  smoke: 0
+  emoteInitialized: 0
   yesInit: 0
   noInit: 0
-  waveInit: 1
+  waveInit: 0
   scoreInit: 0
   thumbsUpInit: 0
   shrugInit: 0
@@ -40,7 +43,8 @@ MonoBehaviour:
   rockOutInit: 0
   facePalmInit: 0
   oopsInit: 0
-  pullHairInit: 0
+  hairPullInit: 0
   saluteInit: 0
   bringItOnInit: 0
   surrenderInit: 0
+  smokeInit: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EmoteEnd : StateMachineBehaviour
 {
     public EmoteData emotes;
-
+    public BoolData movementPause;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -27,9 +27,21 @@ public class EmoteEnd : StateMachineBehaviour
         emotes.surrenderInit = false;
         emotes.smokeInit = false;
 
-        if (emotes.gunHeld == true) animator.Play("equipGun");
-        else animator.Play("returnToOrigin");
-        
+        emotes.emoteInitialized = false;
+
+        movementPause.value = false;
+
+        if(emotes.right == true)
+        {
+            if (emotes.gunHeld == true) animator.Play("GunIdleRight");
+            else animator.Play("IdleRight");
+        }
+        else
+        {
+            if (emotes.gunHeld == true) animator.Play("GunIdleLeft");
+            else animator.Play("idleLeft");
+        }
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

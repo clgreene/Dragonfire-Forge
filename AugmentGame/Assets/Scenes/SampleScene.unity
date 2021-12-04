@@ -1154,6 +1154,7 @@ MonoBehaviour:
   animator: {fileID: 1032199009}
   emoteWheelInt: {fileID: 11400000, guid: 2592024150b009a4b91d5bd986676a53, type: 2}
   emoteSelectionOn: {fileID: 11400000, guid: 4ba0c70bfc2afdc4a8b224a1b3c1a191, type: 2}
+  movementPause: {fileID: 0}
 --- !u!1 &622212911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1563,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 78346859f353a1b4495b4ec752a46ac7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5530,6 +5531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7707009822723254280, guid: f14b55b87e1c3ab4da8e8855e634176e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7707009822723254280, guid: f14b55b87e1c3ab4da8e8855e634176e, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
