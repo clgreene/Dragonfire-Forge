@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunHeld: 0
   gunFired: 0
-  right: 0
-  yes: 0
-  no: 0
-  wave: 0
-  score: 0
-  thumbsUp: 0
-  shrug: 0
-  fuckOff: 0
-  watchingYou: 0
-  rockOut: 0
-  facePalm: 0
-  oops: 0
-  pullHair: 0
-  salute: 0
-  bringItOn: 0
-  surrender: 0
-  smoke: 0
+  right: 1
+  yes: 1
+  no: 1
+  wave: 1
+  score: 1
+  thumbsUp: 1
+  shrug: 1
+  fuckOff: 1
+  watchingYou: 1
+  rockOut: 1
+  facePalm: 1
+  oops: 1
+  pullHair: 1
+  salute: 1
+  bringItOn: 1
+  surrender: 1
+  smoke: 1
   emoteInitialized: 0
   yesInit: 0
   noInit: 0

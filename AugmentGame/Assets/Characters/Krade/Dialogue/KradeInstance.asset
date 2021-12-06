@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae12169547dfdea4fb8b5a3d00f4e82a, type: 3}
   m_Name: KradeInstance
   m_EditorClassIdentifier: 
-  random: 1
-  sentNumber: 0
-  sentence: Eve, you reputation precedes you.
+  random: 0
+  sentNumber: 2
+  sentence: Are you interested?
   sentences:
   - Eve, you reputation precedes you.
   - I'm Krade, and I have a job for you.
   - Are you interested?
-  response: 0
+  response: 1
   end: 0
   dialNumber: 0
   dialogue: {fileID: 0}
   dialogues: []
-  yes: 0
-  no: 0
+  yes: 1
+  no: 1
   wave: 0
   score: 0
   thumbsUp: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EmoteManager : MonoBehaviour
 {
@@ -12,10 +13,20 @@ public class EmoteManager : MonoBehaviour
     public BoolData emoteSelectionOn;
     public BoolData movementPause;
 
+    public GameObject emoteMenu;
+    GameObject newEmote;
+    Transform uiCanvas;
+    Vector3 mousePos;
+
+
+
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         animator = player.GetComponent<Animator>();
+        uiCanvas = GameObject.FindGameObjectWithTag("UI").transform;
+
     }
 
     private void Update()
@@ -37,6 +48,52 @@ public class EmoteManager : MonoBehaviour
         animator.SetBool("thumbsUp", emotes.thumbsUpInit);
         animator.SetBool("rockOut", emotes.rockOutInit);
 
+
+
+    }
+
+    public void emoteMenuPopUp()
+    {
+
+        movementPause.value = true;
+        emoteSelectionOn.value = true;
+        emoteWheelInt.value = 0;
+
+        mousePos = Input.mousePosition;
+
+        newEmote = Instantiate(emoteMenu, transform.position, Quaternion.identity);
+
+        newEmote.transform.SetParent(uiCanvas);
+        newEmote.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        newEmote.transform.position = mousePos;
+
+        newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+
+       
+    }
+
+    public void emoteSwap(int keyStroke)
+    {
+        switch (keyStroke)
+        {
+            case 0:
+                emoteWheelInt.value = 0;
+                newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+                break;
+            case 1:
+                emoteWheelInt.value = 1;
+                newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+                break;
+        }
+    }
+
+    public void emoteMenuExit()
+    {
+        if (newEmote != null) Destroy(newEmote);
+        emoteSelectionOn.value = false;
+        if (emotes.emoteInitialized == true) movementPause.value = true;
+        else movementPause.value = false;
+        Debug.Log("shouldn't be running");
     }
 
     //play either wave or rockout emote
@@ -55,6 +112,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
+        emoteMenuExit();
 
     }
 
@@ -74,7 +132,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
-
+        emoteMenuExit();
     }
 
     //play either bring it or smoking emote
@@ -92,7 +150,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
-
+        emoteMenuExit();
     }
 
     //play either salute or no emote
@@ -110,7 +168,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
-
+        emoteMenuExit();
     }
 
     //play either thumbs up or yes emote
@@ -128,7 +186,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
-
+        emoteMenuExit();
     }
 
     //play either surrender or facepalm emote
@@ -146,7 +204,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
-
+        emoteMenuExit();
     }
 
     //play either watching you or oop emote
@@ -164,7 +222,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
-
+        emoteMenuExit();
     }
 
     //play either shrug or pull hair emote
@@ -182,7 +240,7 @@ public class EmoteManager : MonoBehaviour
                 emoteSelectionOn.value = false;
                 break;
         }
-
+        emoteMenuExit();
     }
 
 

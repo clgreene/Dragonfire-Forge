@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionSix
         m_Mode: 1
@@ -157,7 +157,8 @@ GameObject:
   - component: {fileID: 6383920349767160883}
   - component: {fileID: 6383920349767160882}
   - component: {fileID: 2186327363478110491}
-  - component: {fileID: 4505469592910171736}
+  - component: {fileID: 7750769095538325089}
+  - component: {fileID: 536288799981708512}
   m_Layer: 5
   m_Name: EmoteSelection
   m_TagString: Untagged
@@ -247,7 +248,29 @@ MonoBehaviour:
   emoteWheelInt: {fileID: 11400000, guid: 2592024150b009a4b91d5bd986676a53, type: 2}
   selectionOne: {fileID: 6383920350549673981}
   selectionTwo: {fileID: 6383920350389823733}
---- !u!114 &4505469592910171736
+--- !u!114 &7750769095538325089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383920349767160884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea95d7ba351cad1469e1534b331155df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOne: {fileID: 6383920350467362508}
+  buttonTwo: {fileID: 6383920350073937815}
+  buttonThree: {fileID: 6383920350013825910}
+  buttonFour: {fileID: 6383920351118369523}
+  buttonFive: {fileID: 6383920350586183216}
+  buttonSix: {fileID: 6383920349631832408}
+  buttonSeven: {fileID: 6383920350273912356}
+  buttonEight: {fileID: 6383920349771189770}
+  emoteWheelInt: {fileID: 11400000, guid: 2592024150b009a4b91d5bd986676a53, type: 2}
+  emotes: {fileID: 11400000, guid: 3cf82a98cc74ac34a95b5b86f2876c09, type: 2}
+--- !u!114 &536288799981708512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,10 +282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1d8021ef92aa546b93ee2990e8f0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emotes: {fileID: 11400000, guid: 3cf82a98cc74ac34a95b5b86f2876c09, type: 2}
+  emotes: {fileID: 0}
   animator: {fileID: 0}
-  emoteWheelInt: {fileID: 11400000, guid: 2592024150b009a4b91d5bd986676a53, type: 2}
-  emoteSelectionOn: {fileID: 11400000, guid: 4ba0c70bfc2afdc4a8b224a1b3c1a191, type: 2}
+  emoteWheelInt: {fileID: 0}
+  emoteSelectionOn: {fileID: 0}
+  movementPause: {fileID: 0}
+  emoteMenu: {fileID: 0}
 --- !u!1 &6383920349771189775
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionEight
         m_Mode: 1
@@ -529,7 +554,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionThree
         m_Mode: 1
@@ -674,7 +699,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionTwo
         m_Mode: 1
@@ -819,7 +844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionSeven
         m_Mode: 1
@@ -1039,7 +1064,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionOne
         m_Mode: 1
@@ -1259,7 +1284,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionFive
         m_Mode: 1
@@ -1404,7 +1429,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4505469592910171736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EmoteManager, Assembly-CSharp
         m_MethodName: selectionFour
         m_Mode: 1

@@ -21,11 +21,11 @@ public class PlayerMovement : MonoBehaviour
     //emote data
     public EmoteData emotes;
     public CollectedData jumpData;
+    EmoteManager emoteMan;
     //jumpData.intList = jump count and jump max respectively
     //jumpData.boolValue = groundCheck
 
     public GameObject emoteMenu;
-    GameObject newEmote;
     public BoolData emoteSelectionOn;
     public IntData emoteWheelInt;
     public Transform uiCanvas;
@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        emoteMan = FindObjectOfType<EmoteManager>();
         triggerRight = interactTrigger.offset;
         triggerLeft.y = triggerRight.y;
         triggerLeft.x = -triggerRight.x;
@@ -83,21 +84,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //emote menu popup
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && movementPause.value == false)
         {
-            movementPause.value = true;
             emoteSelectionOn.value = true;
-            emoteWheelInt.value = 0;
-
-            mousePos = Input.mousePosition;
-
-            newEmote = Instantiate(emoteMenu, transform.position, Quaternion.identity);
-            
-            newEmote.transform.SetParent(uiCanvas);
-            newEmote.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-            newEmote.transform.position = mousePos;
-
-            newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+            emoteMan.emoteMenuPopUp();
 
         }
 
@@ -105,24 +95,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                emoteWheelInt.value = 0;
-                newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+                emoteMan.emoteSwap(0);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                emoteWheelInt.value = 1;
-                newEmote.GetComponent<EmoteDisplay>().swapDisplay();
+                emoteMan.emoteSwap(1);
             }
         }
 
         if (Input.GetKeyUp(KeyCode.E) || emotes.emoteInitialized == true)
         {
-            if(newEmote != null) Destroy(newEmote);
-            emoteSelectionOn.value = false;
-            if (emotes.emoteInitialized == true) movementPause.value = true;
-            else movementPause.value = false;
-            Debug.Log("shouldn't be running");
+            emoteMan.emoteMenuExit();
 
         }
 

@@ -6,13 +6,14 @@ using UnityEngine.Events;
 public class InteractObject : MonoBehaviour
 {
 
-    public UnityEvent interactDefault, interactStart, interactCycle, interactEnd;
+    public UnityEvent interactDefault, interactStart, interactCycle, interactRespond, interactEnd;
 
     public GameObject interactIcon;
 
     bool interactEnabled;
     bool started;
     public bool ended;
+    public bool response;
 
 
     private void Start()
@@ -33,20 +34,22 @@ public class InteractObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        interactEnabled = true;
+        if (other.gameObject.CompareTag("Player")) interactEnabled = true;
     }
 
     private void Update()
     {
-        if (interactEnabled = true && Input.GetKeyDown(KeyCode.F))
+        if (interactEnabled == true && Input.GetKeyDown(KeyCode.F))
         {
 
             interactIcon.SetActive(false);
 
             if (started == true && ended == false)
             {
-                interactCycle.Invoke();
+                if (response == true) interactRespond.Invoke();
+                else interactCycle.Invoke();
             }
+
 
             else if (ended == true)
             {

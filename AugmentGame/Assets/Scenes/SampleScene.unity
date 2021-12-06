@@ -1236,7 +1236,8 @@ MonoBehaviour:
   animator: {fileID: 1032199009}
   emoteWheelInt: {fileID: 11400000, guid: 2592024150b009a4b91d5bd986676a53, type: 2}
   emoteSelectionOn: {fileID: 11400000, guid: 4ba0c70bfc2afdc4a8b224a1b3c1a191, type: 2}
-  movementPause: {fileID: 0}
+  movementPause: {fileID: 11400000, guid: 9b16d14ae8548b04180d8b22112429f0, type: 2}
+  emoteMenu: {fileID: 6383920349767160884, guid: 708c2db68d007d44daf4ec10059c46eb, type: 3}
 --- !u!1 &622212911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charDialogue: {fileID: 11400000, guid: 3b724885ae0550c49b83e3077a2b128a, type: 2}
-  instance: {fileID: 836965738}
   speechBubble: {fileID: 1747265858}
   interactIcon: {fileID: 1134879686}
   movementPause: {fileID: 11400000, guid: 9b16d14ae8548b04180d8b22112429f0, type: 2}
@@ -4782,7 +4782,7 @@ GameObject:
   - component: {fileID: 1754691711}
   m_Layer: 5
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

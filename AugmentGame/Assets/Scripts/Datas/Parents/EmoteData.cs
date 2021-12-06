@@ -52,7 +52,39 @@ public class EmoteData : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
-        
+        yes = true;
+        no = true;
+        wave = true;
+        score = true;
+        thumbsUp = true;
+        shrug = true;
+        fuckOff = true;
+        watchingYou = true;
+        rockOut = true;
+        facePalm = true;
+        oops = true;
+        pullHair = true;
+        salute = true;
+        bringItOn = true;
+        surrender = true;
+        smoke = true;
+        emoteInitialized = false;
+        yesInit = false;
+        noInit = false;
+        waveInit = false;
+        scoreInit = false;
+        thumbsUpInit = false;
+        shrugInit = false;
+        fuckOffInit = false;
+        watchingYouInit = false;
+        rockOutInit = false;
+        facePalmInit = false;
+        oopsInit = false;
+        hairPullInit = false;
+        saluteInit = false;
+        bringItOnInit = false;
+        surrenderInit = false;
+        smokeInit = false;
     }
 
     // Update is called once per frame
