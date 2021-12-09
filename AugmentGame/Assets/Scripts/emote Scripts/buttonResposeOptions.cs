@@ -29,19 +29,26 @@ public class buttonResposeOptions : MonoBehaviour
     {
         if(emoteWheelInt.value == 0)
         {
-            buttonOne.enabled = emotes.wave;
-            buttonTwo.enabled = emotes.fuckOff;
-            buttonThree.enabled = emotes.bringItOn;
-            buttonFour.enabled = emotes.salute;
-            buttonFive.enabled = emotes.thumbsUp;
-            buttonSix.enabled = emotes.surrender;
-            buttonSeven.enabled = emotes.watchingYou;
-            buttonEight.enabled = emotes.shrug;
+            buttonOne.interactable = emotes.wave;
+            buttonTwo.interactable = emotes.fuckOff;
+            buttonThree.interactable = emotes.bringItOn;
+            buttonFour.interactable = emotes.salute;
+            buttonFive.interactable = emotes.thumbsUp;
+            buttonSix.interactable = emotes.surrender;
+            buttonSeven.interactable = emotes.watchingYou;
+            buttonEight.interactable = emotes.shrug;
         }
 
         else if(emoteWheelInt.value == 1)
         {
-
+            buttonOne.interactable = emotes.rockOut;
+            buttonTwo.interactable = emotes.score;
+            buttonThree.interactable = emotes.smoke;
+            buttonFour.interactable = emotes.no;
+            buttonFive.interactable = emotes.yes;
+            buttonSix.interactable = emotes.facePalm;
+            buttonSeven.interactable = emotes.oops;
+            buttonEight.interactable = emotes.pullHair;
         }
 
         else if(emoteWheelInt.value == 2)

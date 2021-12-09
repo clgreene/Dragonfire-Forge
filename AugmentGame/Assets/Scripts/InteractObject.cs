@@ -50,6 +50,10 @@ public class InteractObject : MonoBehaviour
                 else interactCycle.Invoke();
             }
 
+            else if (response == true)
+            {
+                interactRespond.Invoke();
+            }
 
             else if (ended == true)
             {
@@ -57,6 +61,7 @@ public class InteractObject : MonoBehaviour
                 interactIcon.SetActive(true);
                 ended = false;
                 started = false;
+                
             }
 
             else

@@ -7,7 +7,7 @@ public class EmoteManager : MonoBehaviour
 {
 
     public EmoteData emotes;
-    public Animator animator;
+    Animator animator;
     GameObject player;
     public IntData emoteWheelInt;
     public BoolData emoteSelectionOn;

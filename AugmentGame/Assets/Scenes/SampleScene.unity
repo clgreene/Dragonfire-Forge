@@ -1233,7 +1233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emotes: {fileID: 11400000, guid: 3cf82a98cc74ac34a95b5b86f2876c09, type: 2}
-  animator: {fileID: 1032199009}
   emoteWheelInt: {fileID: 11400000, guid: 2592024150b009a4b91d5bd986676a53, type: 2}
   emoteSelectionOn: {fileID: 11400000, guid: 4ba0c70bfc2afdc4a8b224a1b3c1a191, type: 2}
   movementPause: {fileID: 11400000, guid: 9b16d14ae8548b04180d8b22112429f0, type: 2}
@@ -1690,6 +1689,7 @@ MonoBehaviour:
   speechBubble: {fileID: 1747265858}
   interactIcon: {fileID: 1134879686}
   movementPause: {fileID: 11400000, guid: 9b16d14ae8548b04180d8b22112429f0, type: 2}
+  emotes: {fileID: 11400000, guid: 3cf82a98cc74ac34a95b5b86f2876c09, type: 2}
 --- !u!114 &836965738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1735,6 +1735,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactRespond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 836965737}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: response
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   interactEnd:
     m_PersistentCalls:
       m_Calls:
@@ -1752,6 +1767,7 @@ MonoBehaviour:
         m_CallState: 2
   interactIcon: {fileID: 1134879686}
   ended: 0
+  response: 0
 --- !u!1 &837854976
 GameObject:
   m_ObjectHideFlags: 0

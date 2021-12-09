@@ -14,7 +14,7 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject speechBubble;
     public GameObject interactIcon;
     public BoolData movementPause;
-    EmoteData emotes;
+    public EmoteData emotes;
 
     Camera cam;
 
@@ -26,7 +26,6 @@ public class DialogueTrigger : MonoBehaviour
         displayedDialogue = dialogueObj.GetComponent<Text>();
         instance = GetComponent<InteractObject>();
         emoteMan = FindObjectOfType<EmoteManager>();
-        emotes = FindObjectOfType<EmoteData>();
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
         cam = FindObjectOfType<Camera>();
@@ -68,7 +67,7 @@ public class DialogueTrigger : MonoBehaviour
         emotes.salute = charDialogue.salute;
         emotes.bringItOn = charDialogue.bringItOn;
         emotes.surrender = charDialogue.surrender;
-        //smoke
+        emotes.smoke = charDialogue.smoke;
 
     }
 
@@ -100,6 +99,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public void response()
     {
+        Debug.Log("Reply");
+        //hide npc speech bubble
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
         emoteMan.emoteMenuPopUp();

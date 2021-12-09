@@ -34,6 +34,7 @@ public class DialogueData : ScriptableObject
     public bool salute;
     public bool bringItOn;
     public bool surrender;
+    public bool smoke;
 
 
 
