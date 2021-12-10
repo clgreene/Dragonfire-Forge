@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public Text minutes;
     public Text hours;
 
+    public EmoteData emotes;
+
     public GameObject daylight;
     Color alpha;
 
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         timeData.boolValue = true;
         alpha = daylight.GetComponent<SpriteRenderer>().color;
+        emotes.reset();
     }
 
     // Update is called once per frame

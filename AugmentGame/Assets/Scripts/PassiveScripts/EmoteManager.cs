@@ -93,7 +93,6 @@ public class EmoteManager : MonoBehaviour
         emoteSelectionOn.value = false;
         if (emotes.emoteInitialized == true) movementPause.value = true;
         else movementPause.value = false;
-        Debug.Log("shouldn't be running");
     }
 
     //play either wave or rockout emote

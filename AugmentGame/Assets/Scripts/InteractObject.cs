@@ -6,14 +6,17 @@ using UnityEngine.Events;
 public class InteractObject : MonoBehaviour
 {
 
-    public UnityEvent interactDefault, interactStart, interactCycle, interactRespond, interactEnd;
+    public UnityEvent interactDefault, interactStart, interactCycle, interactRespond, interactEnd, interactContinue;
 
     public GameObject interactIcon;
 
     bool interactEnabled;
     bool started;
+    public bool waiting;
     public bool ended;
     public bool response;
+    public EmoteData emotes;
+    EmoteManager emoteMan;
 
 
     private void Start()
@@ -21,6 +24,7 @@ public class InteractObject : MonoBehaviour
         interactIcon.SetActive(false);
         started = false;
         interactEnabled = false;
+        emoteMan = FindObjectOfType<EmoteManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +39,7 @@ public class InteractObject : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player")) interactEnabled = true;
+
     }
 
     private void Update()
@@ -53,11 +58,14 @@ public class InteractObject : MonoBehaviour
             else if (response == true)
             {
                 interactRespond.Invoke();
+                interactEnabled = false;
+
             }
 
             else if (ended == true)
             {
                 interactEnd.Invoke();
+                interactEnabled = false;
                 interactIcon.SetActive(true);
                 ended = false;
                 started = false;
@@ -68,6 +76,16 @@ public class InteractObject : MonoBehaviour
             {
                 interactStart.Invoke();
                 started = true;
+            }
+        }
+
+        if (waiting == true)
+        {
+            if (emotes.emoteInitialized == true)
+            {
+                Debug.Log("I waiting for the emote to start");
+                interactContinue.Invoke();
+                waiting = false;
             }
         }
     }

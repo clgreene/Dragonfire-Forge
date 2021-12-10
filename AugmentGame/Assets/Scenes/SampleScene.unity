@@ -1205,6 +1205,7 @@ MonoBehaviour:
   timeData: {fileID: 11400000, guid: 74877c5bbc8b5ec4c8b8d83df5d0617c, type: 2}
   minutes: {fileID: 1809351999}
   hours: {fileID: 375264546}
+  emotes: {fileID: 11400000, guid: 3cf82a98cc74ac34a95b5b86f2876c09, type: 2}
   daylight: {fileID: 1118137857}
 --- !u!4 &595438548
 Transform:
@@ -1665,7 +1666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836965733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.369, y: 0.05, z: 0}
+  m_LocalPosition: {x: 1.37, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1134879685}
@@ -1765,9 +1766,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactContinue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 836965737}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: branchContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   interactIcon: {fileID: 1134879686}
+  waiting: 0
   ended: 0
   response: 0
+  emotes: {fileID: 11400000, guid: 3cf82a98cc74ac34a95b5b86f2876c09, type: 2}
 --- !u!1 &837854976
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,6 +2845,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 836965736}
     m_Modifications:
+    - target: {fileID: 3672090487794416736, guid: 3b0063e28b9b9c749a39a3fabb29d22d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6597763341203128353, guid: 3b0063e28b9b9c749a39a3fabb29d22d, type: 3}
       propertyPath: m_Name
       value: interactIcon1

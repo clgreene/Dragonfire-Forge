@@ -52,6 +52,17 @@ public class EmoteData : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void reset()
+    {
         yes = true;
         no = true;
         wave = true;
@@ -85,11 +96,5 @@ public class EmoteData : ScriptableObject
         bringItOnInit = false;
         surrenderInit = false;
         smokeInit = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -88,7 +88,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         //endDialogue needs a unity event system for different outcomes, i.e. if you must respond, or certain changes happen because of the dialogue, or the characters next dialogue string they give you should change.
 
-
+        emotes.reset();
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
         charDialogue.sentNumber = 0;
@@ -103,10 +103,19 @@ public class DialogueTrigger : MonoBehaviour
         //hide npc speech bubble
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
+        charDialogue.sentNumber = 0;
         emoteMan.emoteMenuPopUp();
-        //ask for a response function from character response script
+        instance.waiting = true;
+
         //character response script will compare unlocked emotes against current dialogue accepted emote to display what responses are allowed
         //response list number will change a response int, which dialogue data will compare and select the appropriate npc continuation
+
+    }
+
+    public void branchContinue()
+    {
+        Debug.Log("I waiting for the emote to start");
+        StartCoroutine(waitForEmote());
 
     }
 
@@ -115,5 +124,12 @@ public class DialogueTrigger : MonoBehaviour
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
         movementPause.value = false;
+    }
+
+
+    IEnumerator waitForEmote()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("I waited for the emote to finish");
     }
 }

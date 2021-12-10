@@ -36,11 +36,31 @@ public class DialogueData : ScriptableObject
     public bool surrender;
     public bool smoke;
 
+    public int responses;
 
 
-    public void initializeDictionary()
+
+    public void initializeResponse()
     {
-        
+        responses = 0;
+
+        if (yes == true) responses++;
+        if (no == true) responses++;
+        if (wave == true) responses++;
+        if (score == true) responses++;
+        if (thumbsUp == true) responses++;
+        if (shrug == true) responses++;
+        if (fuckOff == true) responses++;
+        if (watchingYou == true) responses++;
+        if (rockOut == true) responses++;
+        if (facePalm == true) responses++;
+        if (oops == true) responses++;
+        if (yes == true) responses++;
+        if (pullHair == true) responses++;
+        if (salute == true) responses++;
+        if (bringItOn == true) responses++;
+        if (surrender == true) responses++;
+        if (smoke == true) responses++;
     }
 
 
