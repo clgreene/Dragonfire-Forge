@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public DialogueData charDialogue;
+    public DialogueParentData charDialogue;
     InteractObject instance;
 
     Text displayedDialogue;
@@ -32,6 +32,14 @@ public class DialogueTrigger : MonoBehaviour
         cam = FindObjectOfType<Camera>();
     }
 
+    private void Update()
+    {
+        if (instance.started == true && instance.ended == false)
+        {
+            movementPause.value = true;
+        }
+    }
+
     public void beginDialogue()
     {
         //hault player
@@ -43,44 +51,45 @@ public class DialogueTrigger : MonoBehaviour
         Vector2 screenPosition = cam.WorldToScreenPoint(speechBubble.transform.position);
         displayedDialogue.transform.position = screenPosition;
         //set dialogue to first sentence and display it on screen
-        if(charDialogue.random == true)
+        charDialogue.initialize();
+        if(charDialogue.currentDialogue.random == true)
         {
-            charDialogue.sentNumber = Random.Range(0, charDialogue.sentences.Count);
+            charDialogue.currentDialogue.sentNumber = Random.Range(0, charDialogue.currentDialogue.sentences.Count);
             instance.ended = true;
         }
-        else charDialogue.sentNumber = 0;
+        else charDialogue.currentDialogue.sentNumber = 0;
 
-        charDialogue.sentence = charDialogue.sentences[charDialogue.sentNumber];
-        displayedDialogue.text = charDialogue.sentence;
+        charDialogue.currentDialogue.sentence = charDialogue.currentDialogue.sentences[charDialogue.currentDialogue.sentNumber];
+        displayedDialogue.text = charDialogue.currentDialogue.sentence;
 
-        emotes.yes = charDialogue.yes;
-        emotes.no = charDialogue.no;
-        emotes.wave = charDialogue.wave;
-        emotes.score = charDialogue.score;
-        emotes.thumbsUp = charDialogue.thumbsUp;
-        emotes.shrug = charDialogue.shrug;
-        emotes.fuckOff = charDialogue.fuckOff;
-        emotes.watchingYou = charDialogue.watchingYou;
-        emotes.rockOut = charDialogue.rockOut;
-        emotes.facePalm = charDialogue.facePalm;
-        emotes.oops = charDialogue.oops;
-        emotes.pullHair = charDialogue.pullHair;
-        emotes.salute = charDialogue.salute;
-        emotes.bringItOn = charDialogue.bringItOn;
-        emotes.surrender = charDialogue.surrender;
-        emotes.smoke = charDialogue.smoke;
+        emotes.yes = charDialogue.currentDialogue.yes;
+        emotes.no = charDialogue.currentDialogue.no;
+        emotes.wave = charDialogue.currentDialogue.wave;
+        emotes.score = charDialogue.currentDialogue.score;
+        emotes.thumbsUp = charDialogue.currentDialogue.thumbsUp;
+        emotes.shrug = charDialogue.currentDialogue.shrug;
+        emotes.fuckOff = charDialogue.currentDialogue.fuckOff;
+        emotes.watchingYou = charDialogue.currentDialogue.watchingYou;
+        emotes.rockOut = charDialogue.currentDialogue.rockOut;
+        emotes.facePalm = charDialogue.currentDialogue.facePalm;
+        emotes.oops = charDialogue.currentDialogue.oops;
+        emotes.pullHair = charDialogue.currentDialogue.pullHair;
+        emotes.salute = charDialogue.currentDialogue.salute;
+        emotes.bringItOn = charDialogue.currentDialogue.bringItOn;
+        emotes.surrender = charDialogue.currentDialogue.surrender;
+        emotes.smoke = charDialogue.currentDialogue.smoke;
 
     }
 
     public void cycleDialogue()
     {
-        charDialogue.sentNumber++;
-        charDialogue.sentence = charDialogue.sentences[charDialogue.sentNumber];
-        displayedDialogue.text = charDialogue.sentence;
+        charDialogue.currentDialogue.sentNumber++;
+        charDialogue.currentDialogue.sentence = charDialogue.currentDialogue.sentences[charDialogue.currentDialogue.sentNumber];
+        displayedDialogue.text = charDialogue.currentDialogue.sentence;
 
-        if(charDialogue.sentNumber == charDialogue.sentences.Count - 1)
+        if(charDialogue.currentDialogue.sentNumber == charDialogue.currentDialogue.sentences.Count - 1)
         {
-            if (charDialogue.response == true) instance.response = true;
+            if (charDialogue.currentDialogue.response == true) instance.response = true;
             else instance.ended = true;
         }
     }
@@ -92,7 +101,7 @@ public class DialogueTrigger : MonoBehaviour
         emotes.reset();
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
-        charDialogue.sentNumber = 0;
+        charDialogue.currentDialogue.sentNumber = 0;
         movementPause.value = false;
 
 
@@ -104,7 +113,7 @@ public class DialogueTrigger : MonoBehaviour
         //hide npc speech bubble
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
-        charDialogue.sentNumber = 0;
+        charDialogue.currentDialogue.sentNumber = 0;
         emoteMan.emoteMenuPopUp();
         instance.waiting = true;
 
@@ -117,17 +126,20 @@ public class DialogueTrigger : MonoBehaviour
     {
         Debug.Log("I waiting for the emote to start");
         //pull from emote data what emote is playing, assign number.
-        int i = 0;
-        if (charDialogue.yes == true)
-        {
-            responseNumber.Add(i);
-            i++;
-            if(emotes.yesInit == true)
-            {
 
+        StartCoroutine(waitForEmote());
+
+        //check if response is available, then check if it is the one being played. if so,
+        //assign the corresponding branch of dialogue to currrent dialogue.
+        int i = 0;
+        if (charDialogue.currentDialogue.yes == true)
+        {
+            i++;
+            if (emotes.yesInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
             }
         }
-        StartCoroutine(waitForEmote());
 
     }
 

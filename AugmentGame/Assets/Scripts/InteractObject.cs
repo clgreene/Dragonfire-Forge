@@ -11,7 +11,7 @@ public class InteractObject : MonoBehaviour
     public GameObject interactIcon;
 
     bool interactEnabled;
-    bool started;
+    public bool started;
     public bool waiting;
     public bool ended;
     public bool response;
@@ -83,7 +83,7 @@ public class InteractObject : MonoBehaviour
         {
             if (emotes.emoteInitialized == true)
             {
-                Debug.Log("I waiting for the emote to start");
+                Debug.Log("I waited for the emote to start");
                 interactContinue.Invoke();
                 waiting = false;
             }

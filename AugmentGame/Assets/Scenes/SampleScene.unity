@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7da8a1fdece9bf49be01c710dee4299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charDialogue: {fileID: 11400000, guid: 3b724885ae0550c49b83e3077a2b128a, type: 2}
+  charDialogue: {fileID: 11400000, guid: fedf9048ea3c5de4e9c2092f1e2751ba, type: 2}
   speechBubble: {fileID: 1747265858}
   interactIcon: {fileID: 1134879686}
   movementPause: {fileID: 11400000, guid: 9b16d14ae8548b04180d8b22112429f0, type: 2}
