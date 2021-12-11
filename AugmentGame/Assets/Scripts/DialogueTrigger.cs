@@ -15,6 +15,7 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject interactIcon;
     public BoolData movementPause;
     public EmoteData emotes;
+    List<int> responseNumber;
 
     Camera cam;
 
@@ -115,6 +116,17 @@ public class DialogueTrigger : MonoBehaviour
     public void branchContinue()
     {
         Debug.Log("I waiting for the emote to start");
+        //pull from emote data what emote is playing, assign number.
+        int i = 0;
+        if (charDialogue.yes == true)
+        {
+            responseNumber.Add(i);
+            i++;
+            if(emotes.yesInit == true)
+            {
+
+            }
+        }
         StartCoroutine(waitForEmote());
 
     }

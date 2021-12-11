@@ -15,8 +15,11 @@ public class DialogueData : ScriptableObject
     public bool end;
 
     public int dialNumber;
+    public DialogueData startDialogue;
     public DialogueData dialogue;
     public List<DialogueData> dialogues;
+
+    bool initialized;
 
 
     public bool yes;
@@ -36,33 +39,6 @@ public class DialogueData : ScriptableObject
     public bool surrender;
     public bool smoke;
 
-    public int responses;
-
-
-
-    public void initializeResponse()
-    {
-        responses = 0;
-
-        if (yes == true) responses++;
-        if (no == true) responses++;
-        if (wave == true) responses++;
-        if (score == true) responses++;
-        if (thumbsUp == true) responses++;
-        if (shrug == true) responses++;
-        if (fuckOff == true) responses++;
-        if (watchingYou == true) responses++;
-        if (rockOut == true) responses++;
-        if (facePalm == true) responses++;
-        if (oops == true) responses++;
-        if (yes == true) responses++;
-        if (pullHair == true) responses++;
-        if (salute == true) responses++;
-        if (bringItOn == true) responses++;
-        if (surrender == true) responses++;
-        if (smoke == true) responses++;
-    }
-
 
 
 
@@ -70,7 +46,11 @@ public class DialogueData : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
-
+        if (initialized == false)
+        {
+            dialogue = startDialogue;
+            initialized = true;
+        }
     }
 
     // Update is called once per frame

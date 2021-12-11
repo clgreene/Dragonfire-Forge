@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae12169547dfdea4fb8b5a3d00f4e82a, type: 3}
+  m_Name: KradeDialogueone
+  m_EditorClassIdentifier: 
+  random: 0
+  sentNumber: 0
+  sentence: 
+  sentences: []
+  response: 0
+  end: 0
+  dialNumber: 0
+  dialogue: {fileID: 0}
+  dialogues: []
+  yes: 0
+  no: 0
+  wave: 0
+  score: 0
+  thumbsUp: 0
+  shrug: 0
+  fuckOff: 0
+  watchingYou: 0
+  rockOut: 0
+  facePalm: 0
+  oops: 0
+  pullHair: 0
+  salute: 0
+  bringItOn: 0
+  surrender: 0
+  smoke: 0
+  responses: 0
