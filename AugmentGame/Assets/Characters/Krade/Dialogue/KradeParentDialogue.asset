@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: KradeParentDialogue
   m_EditorClassIdentifier: 
   startDialogue: {fileID: 11400000, guid: 3b724885ae0550c49b83e3077a2b128a, type: 2}
-  currentDialogue: {fileID: 11400000, guid: 3b724885ae0550c49b83e3077a2b128a, type: 2}
-  initialized: 1
+  currentDialogue: {fileID: 11400000, guid: 22dd65924e708584eb316efa4925d846, type: 2}
+  initialized: 0

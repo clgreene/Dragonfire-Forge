@@ -21,6 +21,8 @@ public class DialogueData : ScriptableObject
 
     bool initialized;
 
+    public bool cont;
+
 
     public bool yes;
     public bool no;

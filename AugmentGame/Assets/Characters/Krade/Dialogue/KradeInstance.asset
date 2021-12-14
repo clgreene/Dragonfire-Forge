@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KradeInstance
   m_EditorClassIdentifier: 
   random: 0
-  sentNumber: 2
+  sentNumber: 0
   sentence: Are you interested?
   sentences:
   - Eve, you reputation precedes you.
@@ -22,8 +22,11 @@ MonoBehaviour:
   response: 1
   end: 0
   dialNumber: 0
+  startDialogue: {fileID: 0}
   dialogue: {fileID: 0}
-  dialogues: []
+  dialogues:
+  - {fileID: 11400000, guid: 22dd65924e708584eb316efa4925d846, type: 2}
+  cont: 0
   yes: 1
   no: 1
   wave: 0
@@ -39,3 +42,4 @@ MonoBehaviour:
   salute: 0
   bringItOn: 0
   surrender: 0
+  smoke: 0

@@ -11,12 +11,6 @@ public class DialogueParentData : ScriptableObject
 
     public bool initialized;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void initialize()
     {
         if (initialized == false)

@@ -99,9 +99,11 @@ public class DialogueTrigger : MonoBehaviour
         //endDialogue needs a unity event system for different outcomes, i.e. if you must respond, or certain changes happen because of the dialogue, or the characters next dialogue string they give you should change.
 
         emotes.reset();
+        Debug.Log("Dialogue Ended");
         speechBubble.SetActive(false);
         displayedDialogue.text = null;
         charDialogue.currentDialogue.sentNumber = 0;
+        charDialogue.initialized = false;
         movementPause.value = false;
 
 
@@ -122,12 +124,17 @@ public class DialogueTrigger : MonoBehaviour
 
     }
 
-    public void branchContinue()
+    public void continueDialogue()
+    {
+        StartCoroutine(branchContinue());
+    }
+
+    public IEnumerator branchContinue()
     {
         Debug.Log("I waiting for the emote to start");
         //pull from emote data what emote is playing, assign number.
 
-        StartCoroutine(waitForEmote());
+        yield return StartCoroutine(waitForEmote());
 
         //check if response is available, then check if it is the one being played. if so,
         //assign the corresponding branch of dialogue to currrent dialogue.
@@ -137,9 +144,229 @@ public class DialogueTrigger : MonoBehaviour
             i++;
             if (emotes.yesInit == true)
             {
-                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[i - 1];
+                if(charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                    instance.response = false;
+                    instance.interactStart.Invoke();
+                }
             }
         }
+        if (charDialogue.currentDialogue.no == true)
+        {
+            i++;
+            if (emotes.noInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+
+        }
+        if (charDialogue.currentDialogue.wave == true)
+        {
+            i++;
+            if (emotes.waveInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.score == true)
+        {
+            i++;
+            if (emotes.scoreInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.thumbsUp == true)
+        {
+            i++;
+            if (emotes.thumbsUpInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.shrug == true)
+        {
+            i++;
+            if (emotes.shrugInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.fuckOff == true)
+        {
+            i++;
+            if (emotes.fuckOffInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.watchingYou == true)
+        {
+            i++;
+            if (emotes.watchingYouInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.rockOut == true)
+        {
+            i++;
+            if (emotes.rockOutInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.facePalm == true)
+        {
+            i++;
+            if (emotes.facePalmInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.oops == true)
+        {
+            i++;
+            if (emotes.oopsInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.pullHair == true)
+        {
+            i++;
+            if (emotes.hairPullInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.salute == true)
+        {
+            i++;
+            if (emotes.saluteInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.bringItOn == true)
+        {
+            i++;
+            if (emotes.bringItOnInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.surrender == true)
+        {
+            i++;
+            if (emotes.surrenderInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+        if (charDialogue.currentDialogue.smoke == true)
+        {
+            i++;
+            if (emotes.smokeInit == true)
+            {
+                charDialogue.currentDialogue = charDialogue.currentDialogue.dialogues[responseNumber[i - 1]];
+                if (charDialogue.currentDialogue.cont == true)
+                {
+                    instance.started = true;
+                    instance.waiting = false;
+                    instance.ended = false;
+                }
+            }
+        }
+
 
     }
 

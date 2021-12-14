@@ -18,6 +18,8 @@ public class EmoteCancel : StateMachineBehaviour
     {
         if (Input.anyKeyDown)
         {
+            
+
             emotes.yesInit = false;
             emotes.noInit = false;
             emotes.waveInit = false;
@@ -35,6 +37,8 @@ public class EmoteCancel : StateMachineBehaviour
             emotes.surrenderInit = false;
             emotes.smokeInit = false;
 
+            emotes.emoteInitialized = false;
+
             movementPause.value = false;
 
             if (emotes.right == true)
@@ -47,6 +51,8 @@ public class EmoteCancel : StateMachineBehaviour
                 if (emotes.gunHeld == true) animator.Play("GunIdleLeft");
                 else animator.Play("idleLeft");
             }
+
+
 
 
         }

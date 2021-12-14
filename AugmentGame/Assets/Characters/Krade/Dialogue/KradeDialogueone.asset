@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   random: 0
   sentNumber: 0
-  sentence: 
-  sentences: []
+  sentence: Glad to hear it.
+  sentences:
+  - Glad to hear it.
+  - Okay, here's what I need you to do...
   response: 0
   end: 0
   dialNumber: 0
+  startDialogue: {fileID: 0}
   dialogue: {fileID: 0}
   dialogues: []
+  cont: 1
   yes: 0
   no: 0
   wave: 0
@@ -37,4 +41,3 @@ MonoBehaviour:
   bringItOn: 0
   surrender: 0
   smoke: 0
-  responses: 0
