@@ -32,6 +32,11 @@ public class StoreManager : MonoBehaviour
     public BoolData Rapier;
     public BoolData Mace;
 
+    public Text steelQty;
+    public Text haderiteQty;
+    public Text mythrilQty;
+    public Text asteriteQty;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +46,10 @@ public class StoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        steelQty.text = inv.steel.ToString();
+        haderiteQty.text = inv.haderite.ToString();
+        mythrilQty.text = inv.mythril.ToString();
+        asteriteQty.text = inv.asterite.ToString();
     }
 
     public void purchaseSteel()

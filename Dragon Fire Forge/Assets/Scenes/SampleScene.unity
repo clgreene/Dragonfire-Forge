@@ -17980,7 +17980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &762713777
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18056,6 +18056,10 @@ MonoBehaviour:
   SideAxe: {fileID: 11400000, guid: d362640b7d854da4cb0b8de73700759f, type: 2}
   Rapier: {fileID: 11400000, guid: fec57f596b9aa7744b5b257cd4428c2b, type: 2}
   Mace: {fileID: 11400000, guid: 32a0da386a10a604f920e06348aad36b, type: 2}
+  steelQty: {fileID: 1050444021}
+  haderiteQty: {fileID: 1314845178}
+  mythrilQty: {fileID: 1849773872}
+  asteriteQty: {fileID: 1253777561}
 --- !u!1 &762892288
 GameObject:
   m_ObjectHideFlags: 0
@@ -19733,7 +19737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &808785379
 RectTransform:
   m_ObjectHideFlags: 0

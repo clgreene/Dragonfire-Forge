@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.E) || emotes.emoteInitialized == true)
+        if ((Input.GetKeyUp(KeyCode.E) && movementPause.value == false) || emotes.emoteInitialized == true)
         {
             emoteMan.emoteMenuExit();
 
