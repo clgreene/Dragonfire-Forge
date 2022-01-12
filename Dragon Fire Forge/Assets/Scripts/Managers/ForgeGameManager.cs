@@ -217,6 +217,7 @@ public class ForgeGameManager : MonoBehaviour
                     if (activeAmount == 0)
                     {
                         playing.value = false;
+
                         StartCoroutine(displayScore());
 
                     }
@@ -242,13 +243,14 @@ public class ForgeGameManager : MonoBehaviour
 
     public IEnumerator displayScore()
     {
-        GC.ForgeGame.SetActive(false);
+        
         lineNumber.value = 0;
         int score = (int)(succesfulAmount * 100 / GC.weaponInfo.weaponEdgeVolume);
         GC.weaponInfo.forgeScore = score;
         currentWeapon.forgeScore = score;
         overlay.text = score.ToString() + "%";
         yield return new WaitForSeconds(2f);
+        GC.ForgeGame.SetActive(false);
         overlay.text = "";
         GC.displayWeapon();
 
