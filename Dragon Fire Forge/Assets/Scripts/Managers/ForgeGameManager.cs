@@ -80,6 +80,12 @@ public class ForgeGameManager : MonoBehaviour
 
         if (playing.value == true)
         {
+            currentLine = lineOne;
+            previousLine = null;
+            lineNumber.value = 0;
+            activeAmount = 0;
+            succesfulAmount = 0;
+            firstLine = true;
 
             //updating the current and previous lines
             switch (lineNumber.value)
