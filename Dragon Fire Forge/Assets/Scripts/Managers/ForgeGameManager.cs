@@ -80,12 +80,7 @@ public class ForgeGameManager : MonoBehaviour
 
         if (playing.value == true)
         {
-            currentLine = lineOne;
-            previousLine = null;
-            lineNumber.value = 0;
-            activeAmount = 0;
-            succesfulAmount = 0;
-            firstLine = true;
+
 
             //updating the current and previous lines
             switch (lineNumber.value)
@@ -260,10 +255,17 @@ public class ForgeGameManager : MonoBehaviour
         overlay.text = "";
         GC.displayWeapon();
 
+        //Resetting Game for next time around!!!!
+        currentLine = lineOne;
+        previousLine = null;
+        lineNumber.value = 0;
+        activeAmount = 0;
+        succesfulAmount = 0;
         firstLine = true;
+        linePosition = 0;
 
 
-        for(int i = 0; i < 19; i++)
+        for (int i = 0; i < 19; i++)
         {
             
             switch (i)
