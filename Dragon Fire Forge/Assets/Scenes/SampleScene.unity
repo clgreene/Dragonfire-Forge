@@ -17980,7 +17980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &762713777
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39685,10 +39685,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broadSword:
   - {fileID: 8490164872649445344, guid: 2ae6a51a514074140b4feec9503c4001, type: 3}
+  rapier:
+  - {fileID: 6818656047877377663, guid: fe0b82d702a8c1240a707ef58700e485, type: 3}
+  sideAxe:
+  - {fileID: 6887327847964198259, guid: b85701a2bdea7ae4cb2341fc5283ee52, type: 3}
   longSword: []
   claymore: []
   katana: []
-  mace: []
+  mace:
+  - {fileID: 5233639267681527445, guid: dce39cd2088f9a54bb2bbd82a3242d9c, type: 3}
   bowie: []
   throwingKnives: []
   shield: []

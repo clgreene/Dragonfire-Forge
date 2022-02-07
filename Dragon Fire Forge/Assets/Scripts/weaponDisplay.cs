@@ -6,6 +6,8 @@ public class weaponDisplay : MonoBehaviour
 {
     //weapons
     public GameObject[] broadSword;
+    public GameObject[] rapier;
+    public GameObject[] sideAxe;
     public GameObject[] longSword;
     public GameObject[] claymore;
     public GameObject[] katana;
@@ -65,24 +67,30 @@ public class weaponDisplay : MonoBehaviour
                 currentWeapon = broadSword;
                 break;
             case 1:
-                currentWeapon = longSword;
+                currentWeapon = rapier;
                 break;
             case 2:
-                currentWeapon = claymore;
+                currentWeapon = sideAxe;
                 break;
             case 3:
-                currentWeapon = katana;
+                currentWeapon = longSword;
                 break;
             case 4:
-                currentWeapon = mace;
+                currentWeapon = claymore;
                 break;
             case 5:
-                currentWeapon = bowie;
+                currentWeapon = katana;
                 break;
             case 6:
-                currentWeapon = throwingKnives;
+                currentWeapon = mace;
                 break;
             case 7:
+                currentWeapon = bowie;
+                break;
+            case 8:
+                currentWeapon = throwingKnives;
+                break;
+            case 9:
                 currentWeapon = shield;
                 break;
         }
