@@ -39685,14 +39685,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broadSword:
   - {fileID: 8490164872649445344, guid: 2ae6a51a514074140b4feec9503c4001, type: 3}
+  - {fileID: 5802848605406581552, guid: ad606cd961a3fee4eb99934129464d28, type: 3}
+  - {fileID: 4111103916871464892, guid: 466a4d1510c5b2c48a1fba5600a4ddfe, type: 3}
+  - {fileID: 8490164872649445344, guid: 2ae6a51a514074140b4feec9503c4001, type: 3}
   rapier:
   - {fileID: 6818656047877377663, guid: fe0b82d702a8c1240a707ef58700e485, type: 3}
+  - {fileID: 7732785425822017613, guid: d23fef2db1409054998ad610b7a0824d, type: 3}
+  - {fileID: 582670976942641057, guid: 0e90e74c0e20d12408fc6ef4e967c48e, type: 3}
+  - {fileID: 6818656047877377663, guid: fe0b82d702a8c1240a707ef58700e485, type: 3}
   sideAxe:
+  - {fileID: 6887327847964198259, guid: b85701a2bdea7ae4cb2341fc5283ee52, type: 3}
+  - {fileID: 4946569244973843618, guid: 4fc6b35193846684f985b95eedf99658, type: 3}
+  - {fileID: 1685070994050046125, guid: 8b22f66045071864895c96883770b2b7, type: 3}
   - {fileID: 6887327847964198259, guid: b85701a2bdea7ae4cb2341fc5283ee52, type: 3}
   longSword: []
   claymore: []
   katana: []
   mace:
+  - {fileID: 5233639267681527445, guid: dce39cd2088f9a54bb2bbd82a3242d9c, type: 3}
+  - {fileID: 2472913028565929064, guid: aa7039f234bcc764982fbd5e65335969, type: 3}
+  - {fileID: 5463327903735302746, guid: 817b69c40980e27448b4f579dcf2fc2a, type: 3}
   - {fileID: 5233639267681527445, guid: dce39cd2088f9a54bb2bbd82a3242d9c, type: 3}
   bowie: []
   throwingKnives: []
