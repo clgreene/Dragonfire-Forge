@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef37cc63a66b6c54ba931db1177aba1f, type: 3}
-  m_Name: Inventory
+  m_Name: CheatInventory
   m_EditorClassIdentifier: 
-  money: 1000
+  money: 100000
   reputation: 0
   steel: 10
-  haderite: 0
-  mythril: 0
-  asterite: 0
+  haderite: 10
+  mythril: 10
+  asterite: 10
   orcs: 0
   darkElves: 0
   undead: 0
