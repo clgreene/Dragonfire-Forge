@@ -244,7 +244,7 @@ public class ForgeGameManager : MonoBehaviour
 
     public IEnumerator displayScore()
     {
-        
+
         lineNumber.value = 0;
         int score = (int)(succesfulAmount * 100 / GC.weaponInfo.weaponEdgeVolume);
         GC.weaponInfo.forgeScore = score;
@@ -257,6 +257,7 @@ public class ForgeGameManager : MonoBehaviour
 
         //Resetting Game for next time around!!!!
         currentLine = lineOne;
+        routineFinished = true;
         previousLine = null;
         lineNumber.value = 0;
         activeAmount = 0;

@@ -15,7 +15,11 @@ public class weaponDisplay : MonoBehaviour
     public GameObject[] bowie;
     public GameObject[] throwingKnives;
     public GameObject[] shield;
-
+    public GameObject[] warHammer;
+    public GameObject[] scithe;
+    public GameObject[] daggers;
+    public GameObject[] battleAxe;
+    public GameObject[] scimitar;
 
     //stars
     public GameObject oneStarWeapon;
@@ -67,31 +71,37 @@ public class weaponDisplay : MonoBehaviour
                 currentWeapon = broadSword;
                 break;
             case 1:
-                currentWeapon = rapier;
-                break;
-            case 2:
                 currentWeapon = sideAxe;
                 break;
+            case 2:
+                currentWeapon = rapier;
+                break;
             case 3:
-                currentWeapon = longSword;
+                currentWeapon = mace;
                 break;
             case 4:
                 currentWeapon = claymore;
                 break;
             case 5:
-                currentWeapon = katana;
+                currentWeapon = warHammer;
                 break;
             case 6:
-                currentWeapon = mace;
+                currentWeapon = battleAxe;
                 break;
             case 7:
-                currentWeapon = bowie;
+                currentWeapon = scithe;
                 break;
             case 8:
-                currentWeapon = throwingKnives;
+                currentWeapon = daggers;
                 break;
             case 9:
-                currentWeapon = shield;
+                currentWeapon = scimitar;
+                break;
+            case 10:
+                currentWeapon = katana;
+                break;
+            case 11:
+                currentWeapon = daggers;
                 break;
         }
 
