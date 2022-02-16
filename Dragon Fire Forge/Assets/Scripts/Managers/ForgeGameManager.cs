@@ -37,20 +37,20 @@ public class ForgeGameManager : MonoBehaviour
 
     public IntData weaponMat;
 
-    public bool stopped;
+    bool stopped;
 
-    public bool routineFinished;
+    bool routineFinished;
 
-    public bool reverse;
+    bool reverse;
 
-    public bool firstLine;
+    bool firstLine;
 
     public BoolData playing;
 
-    public int linePosition;
+    int linePosition;
 
     float activeAmount;
-    public float succesfulAmount;
+    float succesfulAmount;
 
     public GameController GC;
 
@@ -256,6 +256,7 @@ public class ForgeGameManager : MonoBehaviour
         GC.displayWeapon();
 
         //Resetting Game for next time around!!!!
+        playing.value = false;
         currentLine = lineOne;
         routineFinished = true;
         previousLine = null;
@@ -264,6 +265,8 @@ public class ForgeGameManager : MonoBehaviour
         succesfulAmount = 0;
         firstLine = true;
         linePosition = 0;
+        stopped = false;
+        reverse = false;
 
 
         for (int i = 0; i < 19; i++)
@@ -369,16 +372,16 @@ public class ForgeGameManager : MonoBehaviour
         switch (speed)
         {
             case 0:
-                waitTime = .15f;
+                waitTime = .10f;
                 break;
             case 1:
-                waitTime = .09f;
+                waitTime = .05f;
                 break;
             case 2:
-                waitTime = .06f;
+                waitTime = .02f;
                 break;
             case 3:
-                waitTime = .03f;
+                waitTime = .004f;
                 break;
         }
 
