@@ -165,7 +165,7 @@ public class ForgeGameManager : MonoBehaviour
 
 
             //updating the line position
-            if (routineFinished == true) StartCoroutine(UpdateSpeed(weaponMat.value));
+            if (routineFinished == true) StartCoroutine(UpdateSpeed(currentWeapon.weaponMat));
 
             //stop line movement and go to the next line
             if (stopped == true)
@@ -372,16 +372,16 @@ public class ForgeGameManager : MonoBehaviour
         switch (speed)
         {
             case 0:
-                waitTime = .10f;
+                waitTime = .13f;
                 break;
             case 1:
-                waitTime = .05f;
+                waitTime = .09f;
                 break;
             case 2:
-                waitTime = .02f;
+                waitTime = .06f;
                 break;
             case 3:
-                waitTime = .004f;
+                waitTime = .03f;
                 break;
         }
 

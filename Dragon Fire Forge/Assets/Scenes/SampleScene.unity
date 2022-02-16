@@ -24162,6 +24162,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979622642}
   m_CullTransparentMesh: 1
+--- !u!1 &981610344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981610345}
+  - component: {fileID: 981610347}
+  - component: {fileID: 981610346}
+  m_Layer: 5
+  m_Name: Overlay Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &981610345
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981610344}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1444837801}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 353}
+  m_SizeDelta: {x: 250.2125, y: 75.5679}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &981610346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981610344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.43137258, g: 0.7058824, b: 0.43529415, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: afc0a139188c66842ad8066d7f4ecdf4, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 60
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &981610347
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981610344}
+  m_CullTransparentMesh: 1
 --- !u!1 &982177917
 GameObject:
   m_ObjectHideFlags: 0
@@ -26349,7 +26428,7 @@ MonoBehaviour:
   startBellows: {fileID: 11400000, guid: e51d4d5db2d8537499344881789b9171, type: 2}
   weaponMat: {fileID: 11400000, guid: 4e0548fcb42103f4e813fa490563f326, type: 2}
   bellowsIcon: {fileID: 102909663}
-  inv: {fileID: 11400000, guid: 9b6a045dc1f857045ad2d7cb016d8b1d, type: 2}
+  inv: {fileID: 11400000, guid: f608278ef2b9bd04b9fcc80dd8eb9ee8, type: 2}
   money: {fileID: 457185257}
   rep: {fileID: 744642883}
   steel: {fileID: 1933838580}
@@ -26954,15 +27033,9 @@ MonoBehaviour:
   lineNumber: {fileID: 11400000, guid: 3b9ff554e152c5045a1a691722cc924e, type: 2}
   currentLineSize: {fileID: 11400000, guid: 28272fc1aa17a0f4fb79ed13f58c2f25, type: 2}
   weaponMat: {fileID: 11400000, guid: 4e0548fcb42103f4e813fa490563f326, type: 2}
-  stopped: 0
-  routineFinished: 0
-  reverse: 0
-  firstLine: 0
   playing: {fileID: 11400000, guid: 521be83ef39f28e4ca9521dfe7bb4f00, type: 2}
-  linePosition: 0
-  succesfulAmount: 0
   GC: {fileID: 1065249164}
-  overlay: {fileID: 208900081}
+  overlay: {fileID: 981610346}
   currentContract: {fileID: 11400000, guid: 4d44ebea1dd8afa4d8d57cc987d225e3, type: 2}
   currentWeapon: {fileID: 11400000, guid: 7265e44a35b3028429d0ae67f14cbfe2, type: 2}
 --- !u!1 &1065797014
@@ -37570,6 +37643,7 @@ RectTransform:
   m_Children:
   - {fileID: 358190499}
   - {fileID: 126861605}
+  - {fileID: 981610345}
   m_Father: {fileID: 1682023289}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
